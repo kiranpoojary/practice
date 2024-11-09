@@ -1,0 +1,36 @@
+.test{
+    background-color: red;
+}
+
+.center {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+  }
+
+  .k-w-20 {
+      width: 10rem;
+      height: 10rem;
+  }
+
+
+
+.image-container {
+    overflow: hidden; 
+  }
+  
+  .image-container img {
+    transition: transform 0.3s ease; /* Smooth transition */
+  
+}
+  
+  .image-container img:hover {
+    transform: scale(1.2); /* Zoom in by 20% on hover */
+  }
+  .zoomin{
+    transform: scale(2); /* Zoom in by 20% */
+  }
+
+  .zoomout{
+    transform: scale(0.5); /* Zoom in by 20% */
+  }

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .clearfix::after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CSS Layout - Horizontal & Vertical Align</h1>
+    <h1>Center Align Elements</h1>
+    <p>
+      To horizontally center a block element (like &lt;div&gt;), use margin:
+      auto;
+    </p>
+    <p>
+      Setting the width of the element will prevent it from stretching out to
+      the edges of its container.
+    </p>
+    <p>
+      The element will then take up the specified width, and the remaining space
+      will be split equally between the two margins:
+    </p>
+
+    <div
+      style="margin: auto; width: 50%; border: 3px solid green; padding: 2rem"
+    >
+      This DIV is centered
+    </div>
+
+    <h1>Center Align Text</h1>
+    <div style="text-align: center; border: 3px solid green; padding: 2rem">
+      Hello
+    </div>
+
+    <h1>Center an Image</h1>
+    <p>
+      To center an image, set left and right margin to auto, and make it into a
+      block element.
+    </p>
+    <img
+      src="9_CSS_TEXT.png"
+      alt="Paris"
+      style="width: 40%; display: block; margin-left: auto; margin-right: auto"
+    />
+    <h1>Left and Right Align - Using position</h1>
+    <p>One method for aligning elements is to use position: absolute;</p>
+    <div
+      style="
+        position: absolute;
+        right: 0px;
+        width: 300px;
+        border: 3px solid #73ad21;
+        padding: 10px;
+      "
+    >
+      <p>
+        In my younger and more vulnerable years my father gave me some advice
+        that I've been turning over in my mind ever since.
+      </p>
+    </div>
+
+    <div
+      style="
+        position: absolute;
+        left: 0px;
+        width: 300px;
+        border: 3px solid #73ad21;
+        padding: 10px;
+      "
+    >
+      <p>
+        In my younger and more vulnerable years my father gave me some advice
+        that I've been turning over in my mind ever since. use clear fix to move
+        dic to next line.
+      </p>
+    </div>
+
+    <h1>The clearfix Hack</h1>
+    <p>
+      <span style="font-weight: 800">Note:</span> If an element is taller than
+      the element containing it, and it is floated, it will overflow outside of
+      its container. You can use the "clearfix hack" to fix this (see example
+      below).
+    </p>
+  </body>
+</html>

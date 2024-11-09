@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>CSS COLOR, BACKGROUND and BORDER</h1>
+    <hr />
+    <div>
+      <h2>1. COLOR</h2>
+      <h1 style="color: Tomato">Hello World</h1>
+      <p style="color: DodgerBlue">Lorem ipsum...</p>
+      <p style="color: MediumSeaGreen">Ut wisi enim...</p>
+      <h1 style="border: 2px solid Tomato">Hello World</h1>
+      <h1 style="border: 2px solid DodgerBlue">Hello World</h1>
+      <h1 style="border: 2px solid Violet">Hello World</h1>
+      <h1 style="background-color: rgb(255, 99, 71)">...</h1>
+      <h1 style="background-color: #ff6347">...</h1>
+      <h1 style="background-color: hsl(9, 100%, 64%)">...</h1>
+      <h1 style="background-color: rgba(255, 99, 71, 0.5)">...</h1>
+      <h1 style="background-color: hsla(9, 100%, 64%, 0.5)">...</h1>
+    </div>
+    <hr />
+    <div>
+      <h2>2. BACKGROUND</h2>
+      <ol type="i">
+        <li>Background Color</li>
+        <li>Background Image</li>
+        <li>Background Repeat</li>
+        <li>Background Attachment</li>
+        <li>Background Shorthand</li>
+      </ol>
+      <div>
+        <h3>i) Background Color</h3>
+        Sets the background color of an element
+        <pre>
+          h1 {
+            background-color: green;
+          }
+
+          div {
+            background-color: lightblue;
+          }
+        </pre>
+        <h4>Opacity / Transparency</h4>
+        <pre>
+          div {
+            background-color: green;
+            opacity: 0.3;
+          }
+
+          <b>Transparency using RGBA</b>
+          div {
+            background: rgba(0, 128, 0, 0.3) /* Green background with 30% opacity */
+          }
+
+        </pre>
+      </div>
+      <div>
+        <h3>ii) Background Image</h3>
+        The background-image property specifies an image to use as the
+        background of an element.<b
+          >By default, the image is repeated so it covers the entire element.</b
+        >
+
+        <pre>
+          body {
+            background-image: url("paper.gif");
+          }
+        </pre>
+      </div>
+      <div>
+        <h3>iii) Background Repeat</h3>
+        By default, the background-image property repeats an image both
+        horizontally and vertically. Some images should be repeated only
+        horizontally or vertically, or they will look strange, like this:
+        <pre>
+          :- To repeat an image horizontally, set background-repeat: repeat-x;
+          :- To repeat an image vertically, set background-repeat: repeat-y;
+
+          body {
+            background-image: url("gradient_bg.png");
+            background-repeat: repeat-x;
+          }
+          
+          <b>Show the background image only once:</b>
+          body {
+            background-image: url("img_tree.png");
+            background-repeat: no-repeat;
+          }
+
+          <b>CSS background-position </b>
+          :- background-position	Sets the starting position of a background image
+          :- background-repeat	Sets how a background image will be repeated
+
+          body {
+            background-image: url("img_tree.png");
+            background-repeat: no-repeat;
+            background-position: right top;
+          }
+        </pre>
+      </div>
+      <div>
+        <h3>iv) Background Attachment</h3>
+        Sets whether a background image is fixed or scrolls with the rest of the
+        page.
+
+        <pre>
+          Specify that the background image should be fixed:
+          body {
+            background-image: url("img_tree.png");
+            background-repeat: no-repeat;
+            background-position: right top;
+            background-attachment: fixed;
+          }
+
+          <b>Specify that the background image should scroll with the rest of the page:</b>
+          body {
+            background-image: url("img_tree.png");
+            background-repeat: no-repeat;
+            background-position: right top;
+            background-attachment: scroll;
+          }
+
+        </pre>
+      </div>
+      <div>
+        <h3>v) Background Shorthand</h3>
+        To shorten the code, it is also possible to specify all the background
+        properties in one single property. This is called a shorthand property.
+
+        <pre>
+          Instead of writing:
+          body {
+            background-color: #ffffff;
+            background-image: url("img_tree.png");
+            background-repeat: no-repeat;
+            background-position: right top;
+          }
+
+          You can use the shorthand property background:
+          body {
+            background: #ffffff url("img_tree.png") no-repeat right top;
+          }
+
+
+
+          Property	                  Description
+          background	                Sets all the background properties in one declaration
+          background-attachment	      Sets whether a background image is fixed or scrolls with the rest of the page
+          background-clip	            Specifies the painting area of the background
+          background-color	          Sets the background color of an element
+          background-image	          Sets the background image for an element
+          background-origin	          Specifies where the background image(s) is/are positioned
+          background-position	        Sets the starting position of a background image
+          background-repeat	          Sets how a background image will be repeated
+          background-size	            Specifies the size of the background image(s)
+
+
+        </pre>
+      </div>
+    </div>
+    <hr />
+    <div>
+      <h2>3. BORDER</h2>
+      The CSS border properties allow you to specify the style, width, and color
+      of an element's border. CSS Border Style The border-style property
+      specifies what kind of border to display.
+      <div>The following values are allowed:</div>
+      <ol>
+        <li>dotted - Defines a dotted border</li>
+        <li>dashed - Defines a dashed border</li>
+        <li>solid - Defines a solid border</li>
+        <li>double - Defines a double border</li>
+        <li>
+          groove - Defines a 3D grooved border. The effect depends on the
+          border-color value
+        </li>
+        <li>
+          ridge - Defines a 3D ridged border. The effect depends on the
+          border-color value
+        </li>
+        <li>
+          inset - Defines a 3D inset border. The effect depends on the
+          border-color value
+        </li>
+        <li>
+          outset - Defines a 3D outset border. The effect depends on the
+          border-color value
+        </li>
+        <li>none - Defines no border</li>
+        <li>hidden - Defines a hidden border</li>
+      </ol>
+      <div style="margin-top: 25px; border: 2px dotted grey">DOTTED</div>
+      <div style="margin-top: 25px; border: 2px dashed grey">DASHED</div>
+      <div style="margin-top: 25px; border: 2px solid grey">SOLID</div>
+      <div style="margin-top: 25px; border: 2px double grey">DOUBLE</div>
+      <div style="margin-top: 25px; border: 2px groove grey">GROOVE</div>
+      <div style="margin-top: 25px; border: 2px ridge grey">RIDGE</div>
+      <div style="margin-top: 25px; border: 2px inset grey">INSET</div>
+      <div style="margin-top: 25px; border: 2px outset grey">OUTSET</div>
+      <div style="margin-top: 25px; border: 2px none grey">NONE</div>
+      <div style="margin-top: 25px; border: 2px hidden grey">HIDDEN</div>
+    </div>
+  </body>
+</html>

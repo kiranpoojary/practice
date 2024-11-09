@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <h1 style="text-decoration: underline">TEXT</h1>
+      <p>CSS has a lot of properties for formatting text.</p>
+      <h1>Text Color</h1>
+      The color property is used to set the color of the text. The color is
+      specified by:
+      <li>a color name - like "red"</li>
+      <li>a HEX value - like "#ff0000"</li>
+      <li>an RGB value - like "rgb(255,0,0)"</li>
+      <pre>
+        body {
+            color: blue;
+          }
+          
+          h1 {
+            color: green;
+          }
+      </pre>
+      <h2>Text Color and Background Color</h2>
+      <p>
+        In this example, we define both the background-color property and the
+        color property:
+      </p>
+      <pre>
+        body {
+            background-color: lightgrey;
+            color: blue;
+          }
+          
+          h1 {
+            background-color: black;
+            color: white;
+          }
+          
+          div {
+            background-color: blue;
+            color: white;
+          }
+      </pre>
+      <h1>CSS Text Alignment</h1>
+      <ol>
+        <li>text-align</li>
+        <li>text-align-last</li>
+        <li>direction</li>
+        <li>unicode-bidi</li>
+        <li>vertical-align</li>
+      </ol>
+
+      <h2>Text Alignment</h2>
+      <p>
+        The text-align property is used to set the horizontal alignment of a
+        text.
+      </p>
+      <p>A text can be left or right aligned, centered, or justified.</p>
+      <pre>
+        h1 {
+            text-align: center;
+          }
+          
+          h2 {
+            text-align: left;
+          }
+          
+          h3 {
+            text-align: right;
+          }
+
+          div {
+            text-align: justify;
+          }
+      </pre>
+      <h2>Text Align Last</h2>
+      <p>
+        The text-align-last property specifies how to align the last line of a
+        text.
+      </p>
+      <pre>
+        p.a {
+            text-align-last: right;
+          }
+          
+          p.b {
+            text-align-last: center;
+          }
+          
+          p.c {
+            text-align-last: justify;
+          }
+      </pre>
+      <h2>Text Direction</h2>
+      <p>This is the default text direction.</p>
+      <p style="direction: rtl; unicode-bidi: bidi-override">
+        This is right-to-left text direction.
+      </p>
+      <pre>
+        p.ex1 {
+            direction: rtl;
+            unicode-bidi: bidi-override;
+          }
+      </pre>
+      <h2>Vertical Alignment</h2>
+      <p>
+        The vertical-align property sets the vertical alignment of an element.
+      </p>
+      <pre>
+        img.a {
+            vertical-align: baseline;
+          }
+          
+          img.b {
+            vertical-align: text-top;
+          }
+          
+          img.c {
+            vertical-align: text-bottom;
+          }
+          
+          img.d {
+            vertical-align: sub;
+          }
+          
+          img.e {
+            vertical-align: super;
+          }
+      </pre>
+      <h1>Text Decoration</h1>
+      <li>text-decoration-line</li>
+      <li>text-decoration-color</li>
+      <li>text-decoration-style</li>
+      <li>text-decoration-thickness</li>
+      <li>text-decoration</li>
+    </div>
+
+    <pre>
+        h1 {
+            text-decoration-line: overline;
+          }
+          
+          h2 {
+            text-decoration-line: line-through;
+          }
+          
+          h3 {
+            text-decoration-line: underline;
+          }
+          
+          p {
+            text-decoration-line: overline underline;
+          }
+    </pre>
+    <h2>Specify a Color for the Decoration Line</h2>
+    <pre>
+        h1 {
+            text-decoration-line: overline;
+            text-decoration-color: red;
+          }
+          
+          h2 {
+            text-decoration-line: line-through;
+            text-decoration-color: blue;
+          }
+          
+          h3 {
+            text-decoration-line: underline;
+            text-decoration-color: green;
+          }
+          
+          p {
+            text-decoration-line: overline underline;
+            text-decoration-color: purple;
+          }
+    </pre>
+    <h2>Specify a Style for the Decoration Line</h2>
+    <pre>
+        h1 {
+            text-decoration-line: underline;
+            text-decoration-style: solid;
+          }
+          
+          h2 {
+            text-decoration-line: underline;
+            text-decoration-style: double;
+          }
+          
+          h3 {
+            text-decoration-line: underline;
+            text-decoration-style: dotted;
+          }
+          
+          p.ex1 {
+            text-decoration-line: underline;
+            text-decoration-style: dashed;
+          }
+          
+          p.ex2 {
+            text-decoration-line: underline;
+            text-decoration-style: wavy;
+          }
+          
+          p.ex3 {
+            text-decoration-line: underline;
+            text-decoration-color: red;
+            text-decoration-style: wavy;
+          }
+    </pre>
+
+    <h2>Specify the Thickness for the Decoration Line</h2>
+    <pre>
+        h1 {
+            text-decoration-line: underline;
+            text-decoration-thickness: auto;
+          }
+          
+          h2 {
+            text-decoration-line: underline;
+            text-decoration-thickness: 5px;
+          }
+          
+          h3 {
+            text-decoration-line: underline;
+            text-decoration-thickness: 25%;
+          }
+          
+          p {
+            text-decoration-line: underline;
+            text-decoration-color: red;
+            text-decoration-style: double;
+            text-decoration-thickness: 5px;
+          }
+    </pre>
+
+    <h2>The Shorthand Property</h2>
+    The text-decoration property is a shorthand property for:
+    <li>text-decoration-line (required)</li>
+    <li>text-decoration-color (optional)</li>
+    <li>text-decoration-style (optional)</li>
+    <li>text-decoration-thickness (optional)</li>
+    <pre>
+        h1 {
+            text-decoration: underline;
+          }
+          
+          h2 {
+            text-decoration: underline red;
+          }
+          
+          h3 {
+            text-decoration: underline red double;
+          }
+          
+          p {
+            text-decoration: underline red double 5px;
+          }
+    </pre>
+    <h3>
+      All links in HTML are underlined by default. Sometimes you see that links
+      are styled with no underline. The text-decoration: none; is used to remove
+      the underline from links, like this:
+    </h3>
+
+    <h1>Text Transformation</h1>
+    <pre>
+        p.uppercase {
+            text-transform: uppercase;
+          }
+          
+          p.lowercase {
+            text-transform: lowercase;
+          }
+          
+          p.capitalize {
+            text-transform: capitalize;
+          }
+    </pre>
+
+    <h1>CSS Text Spacing</h1>
+    <li>text-indent</li>
+    <li>letter-spacing</li>
+    <li>line-height</li>
+    <li>word-spacing</li>
+    <li>white-space</li>
+
+    <h2>text-indent</h2>
+    <p style="text-indent: 50px">
+      The text-indent property is used to specify the indentation of the first
+      line of a text:The text-indent property is used to specify the indentation
+      of the first line of a text:The text-indent property is used to specify
+      the indentation of the first line of a text:The text-indent property is
+      used to specify the indentation of the first line of a text:
+    </p>
+
+    <h2>letter-spacing</h2>
+    <p style="letter-spacing: 10px">
+      The letter-spacing property is used to specify the space between the
+      characters in a text.
+    </p>
+    <p style="letter-spacing: -2px">
+      The letter-spacing property is used to specify the space between the
+      characters in a text.
+    </p>
+
+    <h2>line-height</h2>
+    <p>
+      This is a paragraph with a standard line-height.<br />
+      The default line height in most browsers is about 110% to 120%.<br />
+    </p>
+
+    <p style="line-height: 0.8">
+      This is a paragraph with a smaller line-height.<br />
+      This is a paragraph with a smaller line-height.<br />
+    </p>
+
+    <p style="line-height: 1.8">
+      This is a paragraph with a bigger line-height.<br />
+      This is a paragraph with a bigger line-height.<br />
+    </p>
+    <h2>Word Spacing</h2>
+    <p style="word-spacing: 14px">
+      The word-spacing property is used to specify the space between the words
+      in a text.
+    </p>
+    <p style="word-spacing: -2px">
+      The word-spacing property is used to specify the space between the words
+      in a text.
+    </p>
+    <h2>White Space</h2>
+    <p>
+      The white-space property specifies how white-space inside an element is
+      handled.
+    </p>
+    <p style="white-space: nowrap">
+      This is some text that will not wrap. This is some text that will not
+      wrap. This is some text that will not wrap. This is some text that will
+      not wrap. This is some text that will not wrap. This is some text that
+      will not wrap. This is some text that will not wrap. This is some text
+      that will not wrap. This is some text that will not wrap.
+    </p>
+
+    <h1>CSS Text Shadow</h1>
+    <p>The text-shadow property adds shadow to text.</p>
+    <h3 style="text-shadow: 1px 1px">Text shadow effect!</h3>
+    <h1 style="text-shadow: 2px 2px red">Text shadow effect!</h1>
+    <h1 style="text-shadow: 2px 2px 5px red">Text shadow effect!</h1>
+  </body>
+</html>

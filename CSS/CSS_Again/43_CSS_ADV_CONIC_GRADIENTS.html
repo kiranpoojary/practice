@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #grad1 {
+        height: 200px;
+        width: 200px;
+        background-color: red; /* For browsers that do not support gradients */
+        background-image: conic-gradient(red, yellow, green);
+      }
+
+      #grad2 {
+        height: 200px;
+        width: 200px;
+        background-color: red; /* For browsers that do not support gradients */
+        background-image: conic-gradient(red, yellow, green, blue, black);
+      }
+      #grad3 {
+        height: 200px;
+        width: 200px;
+        background-color: red; /* For browsers that do not support gradients */
+        background-image: conic-gradient(red 45deg, yellow 90deg, green 210deg);
+      }
+      #grad4 {
+        height: 200px;
+        width: 200px;
+        background-color: red; /* For browsers that do not support gradients */
+        background-image: conic-gradient(red, yellow, green, blue, black);
+        border-radius: 50%;
+      }
+      #grad5 {
+        height: 200px;
+        width: 200px;
+        background-color: red; /* For browsers that do not support gradients */
+        background-image: conic-gradient(
+          red 0deg,
+          red 90deg,
+          yellow 90deg,
+          yellow 180deg,
+          green 180deg,
+          green 270deg,
+          blue 270deg
+        );
+        border-radius: 50%;
+      }
+      #grad6 {
+        height: 200px;
+        width: 200px;
+        background-color: red; /* For browsers that do not support gradients */
+        background-image: conic-gradient(from 90deg, red, yellow, green);
+        border-radius: 50%;
+      }
+
+      #grad7 {
+        height: 200px;
+        width: 200px;
+        background-color: red; /* For browsers that do not support gradients */
+        background-image: conic-gradient(at 60% 45%, red, yellow, green);
+        border-radius: 50%;
+      }
+
+      #grad8 {
+        height: 200px;
+        width: 200px;
+        background-color: red; /* For browsers that do not support gradients */
+        background-image: repeating-conic-gradient(red 10%, yellow 20%);
+        border-radius: 50%;
+      }
+
+      #grad9 {
+        height: 200px;
+        width: 200px;
+        background-color: red; /* For browsers that do not support gradients */
+        background-image: repeating-conic-gradient(
+          red 0deg 10deg,
+          yellow 10deg 20deg,
+          blue 20deg 30deg
+        );
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>CSS Conic Gradients</h1>
+      <p>
+        A conic gradient is a gradient with color transitions rotated around a
+        center point.
+      </p>
+      <p>To create a conic gradient you must define at least two colors.</p>
+      <pre>
+        Syntax:
+        background-image: conic-gradient([from angle] [at position,] color [degree], color [degree], ...);
+      </pre>
+      <p>
+        By default, angle is 0deg and position is center.If no degree is
+        specified, the colors will be spread equally around the center point.
+      </p>
+      <h1>Conic Gradient - Three Colors</h1>
+      <div id="grad1"></div>
+
+      <h1>Conic Gradient - Five Colors</h1>
+      <div id="grad2"></div>
+
+      <h1>Conic Gradient - Defined degree for each color</h1>
+      <div id="grad3"></div>
+
+      <h1>Create Pie Charts</h1>
+      <p>
+        Just add border-radius: 50% to make the conic gradient look like a pie:
+      </p>
+      <h1>Conic Gradient - Pie Chart</h1>
+      <div id="grad4"></div>
+
+      <h1>Conic Gradient - Pie Chart</h1>
+      <div id="grad5"></div>
+
+      <h1>Conic Gradient With Specified From Angle</h1>
+      <div id="grad6"></div>
+
+      <h1>Conic Gradient With Specified Center Position</h1>
+      <p>The [at position] specifies the center of the conic gradient.</p>
+      <div id="grad7"></div>
+
+      <h1>Repeating a Conic Gradient</h1>
+      <div id="grad8"></div>
+
+      <h1>Repeating a Conic Gradient with color-starts and -stops</h1>
+      <div id="grad9"></div>
+    </div>
+    <br />
+    <table border="1px solid black">
+      <tbody>
+        <tr>
+          <th style="width: 35%">Function</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>
+            <a href="/cssref/func_conic-gradient.asp">conic-gradient()</a>
+          </td>
+          <td>
+            Creates a conic gradient. Define at least two colors (around a
+            center point)
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a href="/cssref/func_linear-gradient.asp">linear-gradient()</a>
+          </td>
+          <td>
+            Creates a linear gradient. Define at least two colors (top to
+            bottom)
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a href="/cssref/func_radial-gradient.asp">radial-gradient()</a>
+          </td>
+          <td>
+            Creates a radial gradient. Define at least two colors (center to
+            edges)
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a href="/cssref/func_repeating-conic-gradient.asp"
+              >repeating-conic-gradient()</a
+            >
+          </td>
+          <td>Repeats a conic gradient</td>
+        </tr>
+        <tr>
+          <td>
+            <a href="/cssref/func_repeating-linear-gradient.asp"
+              >repeating-linear-gradient()</a
+            >
+          </td>
+          <td>Repeats a linear gradient</td>
+        </tr>
+        <tr>
+          <td>
+            <a href="/cssref/func_repeating-radial-gradient.asp"
+              >repeating-radial-gradient()</a
+            >
+          </td>
+          <td>Repeats a radial gradient</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

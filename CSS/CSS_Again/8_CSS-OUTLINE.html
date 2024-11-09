@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <h1>CSS Outline</h1>
+      <p>
+        An outline is a <span style="font-weight: 800">LINE</span> drawn outside
+        the element's border.
+      </p>
+      <div
+        style="
+          margin: 30px;
+          border: 1px solid cyan;
+          outline: 1px solid red;
+          outline-offset: 15px;
+        "
+      >
+        <pre>
+        style="
+            margin: 30px;
+            border: 1px solid cyan;
+            outline: 1px solid red;
+            outline-offset: 15px;
+        "
+       </pre
+        >
+      </div>
+      <br />
+      <div
+        style="
+          margin: 30px;
+          border: 1px solid green;
+          outline: 1px solid red;
+          outline-offset: 30px;
+        "
+      >
+        <pre>
+        style="
+            margin: 30px;
+            border: 1px solid green;
+            outline: 1px solid red;
+            outline-offset: 30px;
+        "
+       </pre
+        >
+      </div>
+      <br />
+      <pre>
+        p.dotted {outline-style: dotted;}
+        p.dashed {outline-style: dashed;}
+        p.solid {outline-style: solid;}
+        p.double {outline-style: double;}
+        p.groove {outline-style: groove;}
+        p.ridge {outline-style: ridge;}
+        p.inset {outline-style: inset;}
+        p.outset {outline-style: outset;}
+
+      </pre>
+      <h2>CSS has the following outline properties:</h2>
+      <ul>
+        <li>outline-style</li>
+        <li>outline-color</li>
+        <li>outline-width</li>
+        <li>outline-offset</li>
+        <li>outline</li>
+      </ul>
+
+      <h1>CSS Outline Style</h1>
+      <ul>
+        <li>dotted - Defines a dotted outline</li>
+        <li>dashed - Defines a dashed outline</li>
+        <li>solid - Defines a solid outline</li>
+        <li>double - Defines a double outline</li>
+        <li>groove - Defines a 3D grooved outline</li>
+        <li>ridge - Defines a 3D ridged outline</li>
+        <li>inset - Defines a 3D inset outline</li>
+        <li>outset - Defines a 3D outset outline</li>
+        <li>none - Defines no outline</li>
+        <li>hidden - Defines a hidden outline</li>
+      </ul>
+
+      <h1>CSS Outline Width</h1>
+      <pre>
+        p.ex1 {
+            border: 1px solid black;
+            outline-style: solid;
+            outline-color: red;
+            <b>outline-width: thin;</b>
+          }
+          
+          p.ex2 {
+            border: 1px solid black;
+            outline-style: solid;
+            outline-color: red;
+            <b>outline-width: medium;</b>
+          }
+          
+          p.ex3 {
+            border: 1px solid black;
+            outline-style: solid;
+            outline-color: red;
+            <b>outline-width: thick;</b>
+          }
+          
+          p.ex4 {
+            border: 1px solid black;
+            outline-style: solid;
+            outline-color: red;
+            <b>outline-width: 4px;</b>
+          }
+      </pre>
+
+      <h1>CSS Outline Color</h1>
+      <pre>
+        The outline color can also be specified using a hexadecimal value (HEX):
+
+        p.ex1 {
+            border: 2px solid black;
+            outline-style: solid;
+           <b> outline-color: red;</b>
+          }
+          
+          p.ex2 {
+            border: 2px solid black;
+            outline-style: dotted;
+           <b> outline-color: blue;</b>
+          }
+          
+          p.ex3 {
+            border: 2px solid black;
+            outline-style: outset;
+           <b> outline-color: grey;</b>
+          }
+      </pre>
+
+      <h1>CSS Outline - Shorthand property</h1>
+      <pre>
+        p.ex1 {outline: dashed;}
+        p.ex2 {outline: dotted red;}
+        p.ex3 {outline: 5px solid yellow;}
+        p.ex4 {outline: thick ridge pink;}
+      </pre>
+      <h1>CSS Outline Offset</h1>
+      <p>
+        The outline-offset property adds space between an outline and the
+        edge/border of an element. The space between an element and its outline
+        is transparent.
+      </p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      img.hov-opa {
+        opacity: 1;
+      }
+      img.hov-opa:hover {
+        opacity: 0.7;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CSS Opacity / Transparency</h1>
+    <div>
+      The opacity property specifies the opacity/transparency of an element.
+    </div>
+    <h1>Transparent Image</h1>
+    <h2>opacity:0.1</h2>
+    <img
+      style="opacity: 0.1"
+      src="./image-1.png"
+      alt="No"
+      height="300px"
+      width="300px"
+    />
+    <h2>opacity:0.5</h2>
+    <img
+      style="opacity: 0.5"
+      src="./image-1.png"
+      alt="No"
+      height="300px"
+      width="300px"
+    />
+    <h2>opacity:1</h2>
+    <img
+      style="opacity: 1"
+      src="./image-1.png"
+      alt="No"
+      height="300px"
+      width="300px"
+    />
+
+    <h1>Transparent Hover Effect</h1>
+    <div>
+      The opacity property is often used together with the :hover selector to
+      change the opacity on mouse-over:
+    </div>
+    <img
+      class="hov-opa"
+      src="./image-1.png"
+      alt="No"
+      height="300px"
+      width="300px"
+    />
+    <h2>Transparent Box</h2>
+    <pre>
+        div {
+            opacity: 0.3;
+          }
+    </pre>
+
+    <h2>Transparency using RGBA</h2>
+    <pre>
+        div {
+            background: rgba(76, 175, 80, 0.3) /* Green background with 30% opacity */
+          }
+    </pre>
+  </body>
+</html>

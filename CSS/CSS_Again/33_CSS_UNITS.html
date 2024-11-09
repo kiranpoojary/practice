@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <h1>CSS Units</h1>
+    </div>
+    <li>CSS has several different units for expressing a length.</li>
+    <li>
+      Many CSS properties take "length" values, such as width, margin, padding,
+      font-size, etc.
+    </li>
+    <li>
+      Length is a number followed by a length unit, such as 10px, 2em, etc.
+    </li>
+    <li>For some CSS properties, negative lengths are allowed.</li>
+    <pre>
+        h1 {
+            font-size: 60px;
+          }
+          
+        p {
+            font-size: 25px;
+            line-height: 50px;
+          }
+
+    Note: A whitespace cannot appear between the number and the unit. However, if the value is 0, the unit can be omitted.
+    </pre>
+    <h1>Absolute Lengths</h1>
+    <li>
+      The absolute length units are fixed and a length expressed in any of these
+      will appear as exactly that size.
+    </li>
+    <li>
+      Absolute length units are not recommended for use on screen, because
+      screen sizes vary so much. However, they can be used if the output medium
+      is known, such as for print layout.
+    </li>
+
+    <table border="1px solid grey">
+      <tr>
+        <th>Unit</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td>cm</td>
+        <td>centimeters</td>
+      </tr>
+      <tr>
+        <td>mm</td>
+        <td>millimeters</td>
+      </tr>
+      <tr>
+        <td>in</td>
+        <td>inches (1in = 96px = 2.54cm)</td>
+      </tr>
+      <tr>
+        <td>px *</td>
+        <td>pixels (1px = 1/96th of 1in)</td>
+      </tr>
+      <tr>
+        <td>pt</td>
+        <td>points (1pt = 1/72 of 1in)</td>
+      </tr>
+      <tr>
+        <td>pc</td>
+        <td>picas (1pc = 12 pt)</td>
+      </tr>
+    </table>
+    <div>
+      <span style="font-weight: 900">NOTE:</span> * Pixels (px) are relative to
+      the viewing device. For low-dpi devices, 1px is one device pixel (dot) of
+      the display. For printers and high resolution screens 1px implies multiple
+      device pixels.
+
+      <h1>Relative Lengths</h1>
+      <li>
+        Relative length units specify a length relative to another length
+        property. Relative length units scale better between different rendering
+        mediums.
+      </li>
+
+      <table border="1px solid grey">
+        <tr>
+          <th>Unit</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>em</td>
+          <td>
+            Relative to the font-size of the element (2em means 2 times the size
+            of the current font)
+          </td>
+        </tr>
+        <tr>
+          <td>ex</td>
+          <td>Relative to the x-height of the current font (rarely used)</td>
+        </tr>
+        <tr>
+          <td>ch</td>
+          <td>Relative to width of the "0" (zero)</td>
+        </tr>
+        <tr>
+          <td>rem</td>
+          <td>Relative to font-size of the root element</td>
+        </tr>
+        <tr>
+          <td>vw</td>
+          <td>Relative to 1% of the width of the viewport*</td>
+        </tr>
+        <tr>
+          <td>vh</td>
+          <td>Relative to 1% of the height of the viewport*</td>
+        </tr>
+        <tr>
+          <td>vmin</td>
+          <td>Relative to 1% of viewport's* smaller dimension</td>
+        </tr>
+        <tr>
+          <td>vmax</td>
+          <td>Relative to 1% of viewport's* larger dimension</td>
+        </tr>
+        <tr>
+          <td>%</td>
+          <td>Relative to the parent element</td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

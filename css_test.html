@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Test</title>
+    <link rel="stylesheet" href="./css_test.css" />
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const zoomInButton = document.getElementById("zoomin");
+        const zoomOutButton = document.getElementById("zoomout");
+        const imageContainer = document.getElementById("image-container");
+
+        zoomInButton.addEventListener("click", () => {
+          imageContainer.classList.toggle("zoomin"); // Add zoomed class to container
+        });
+
+        zoomOutButton.addEventListener("click", () => {
+          imageContainer.classList.toggle("zoomout"); // Add zoomed class to container
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h2>CSS Tricks</h2>
+    <div class="center k-zoom">
+      <div class="image-container" id="image-container">
+        <img class="k-w-20" src="./9.jpeg" alt="No Img" />
+      </div>
+      <button id="zoomin">Zoom-In</button>
+      <button id="zoomout">Zoom-Out</button>
+    </div>
+  </body>
+</html>

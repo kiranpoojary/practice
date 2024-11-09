@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <div>
+        <h1 style="text-decoration: underline">Margin</h1>
+        The CSS margin properties are used to create space around elements,
+        outside of any defined borders. With CSS, you have full control over the
+        <p>
+          margins. There are properties for setting the margin for each side of
+          an element (top, right, bottom, and left).
+        </p>
+        <h2 style="text-decoration: underline">Margin - Individual Sides</h2>
+        <p>
+          CSS has properties for specifying the margin for each side of an
+          element:
+        </p>
+        <ul>
+          <li>margin-top</li>
+          <li>margin-right</li>
+          <li>margin-bottom</li>
+          <li>margin-left</li>
+        </ul>
+
+        <p>All the margin properties can have the following values:</p>
+        <li>auto - the browser calculates the margin</li>
+        <li>length - specifies a margin in px, pt, cm, etc.</li>
+        <li>
+          % - specifies a margin in % of the width of the containing element
+        </li>
+        <li>
+          inherit - specifies that the margin should be inherited from the
+          parent element
+        </li>
+      </div>
+      <h3>Tip: Negative values are allowed.</h3>
+
+      <h2 style="text-decoration: underline">Margin Collapse</h2>
+      <p>
+        Top and bottom margins of elements are sometimes collapsed into a single
+        margin that is equal to the largest of the two margins.
+      </p>
+      <p>
+        This does not happen on left and right margins! Only top and bottom
+        margins!
+      </p>
+      <h1>IMP:Inspect to See(2 div margins are colided)(50+20=50 only)</h1>
+      <div style="border: 1px solid gray; margin-bottom: 50px"></div>
+      <div style="border: 1px solid gray; margin-top: 20px"></div>
+      <div>
+        <span
+          >NOTE:Here bigger margin will win(50 here) (-60, -20 the -60 will
+          win)</span
+        >
+      </div>
+    </div>
+    <div>
+      <h1>CSS Padding</h1>
+      <div>
+        <p>
+          Padding is used to create space around an element's content, inside of
+          any defined borders.
+        </p>
+        <ol>
+          padding-top
+        </ol>
+        <ol>
+          padding-right
+        </ol>
+        <ol>
+          padding-bottom
+        </ol>
+        <ol>
+          padding-left
+        </ol>
+        <pre>
+          All the padding properties can have the following values:
+          :- length - specifies a padding in px, pt, cm, etc.
+          :- % - specifies a padding in % of the width of the containing element
+          :- inherit - specifies that the padding should be inherited from the parent element
+          :- Note: Negative values are not allowed.
+
+          <b>Padding - Shorthand Property</b>
+          padding: TOPpx RIGHTpx BOTTOMpx LEFTpx;
+          
+          ex:  div {
+                  padding: 25px 50px 75px 100px;
+                }
+        </pre>
+      </div>
+    </div>
+  </body>
+</html>

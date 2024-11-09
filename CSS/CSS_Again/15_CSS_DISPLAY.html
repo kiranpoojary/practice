@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <div>
+      <h1>CSS Layout - The display Property</h1>
+      <p>
+        The display property is the most important CSS property for controlling
+        layout.
+      </p>
+      <h1>The display Property</h1>
+      <p>
+        The display property is used to specify how an element is shown on a web
+        page. The display property is used to change the default display
+        behavior of HTML elements.
+      </p>
+      <p>
+        Every HTML element has a default display value, depending on what type
+        of element it is. The default display value for most elements is block
+        or inline.
+      </p>
+      <p>
+        The display property is used to change the default display behavior of
+        HTML elements.
+      </p>
+
+      <h1>Block-level Elements</h1>
+      <p>
+        A block-level element ALWAYS starts on a new line and takes up the full
+        width available (stretches out to the left and right as far as it can).
+      </p>
+      <li>&lt;div&gt;</li>
+      <li>&lt;h1&gt; -&lt;h6&gt;</li>
+      <li>&lt;p&gt;</li>
+      <li>&lt;form&gt;</li>
+      <li>&lt;header&gt;</li>
+      <li>&lt;footer&gt;</li>
+      <li>&lt;section&gt;</li>
+
+      <h1>Inline Elements</h1>
+      <p>
+        An inline element DOES NOT start on a new line and only takes up as much
+        width as necessary.
+      </p>
+      <li>&lt;span&gt;</li>
+      <li>&lt;a&gt;</li>
+      <li>&lt;img&gt;</li>
+
+      <h1>The display Property Values</h1>
+      <table>
+        <tbody>
+          <tr>
+            <td>inline</td>
+            <td>Displays an element as an inline element</td>
+          </tr>
+          <tr>
+            <td>block</td>
+            <td>Displays an element as a block element</td>
+          </tr>
+          <tr>
+            <td>contents</td>
+            <td>
+              Makes the container disappear, making the child elements children
+              of the element the next level up in the DOM
+            </td>
+          </tr>
+          <tr>
+            <td>flex</td>
+            <td>Displays an element as a block-level flex container</td>
+          </tr>
+          <tr>
+            <td>grid</td>
+            <td>Displays an element as a block-level grid container</td>
+          </tr>
+          <tr>
+            <td>inline-block</td>
+            <td>
+              Displays an element as an inline-level block container. The
+              element itself is formatted as an inline element, but you can
+              apply height and width values
+            </td>
+          </tr>
+          <tr>
+            <td>inline-flex</td>
+            <td>Displays an element as an inline-level flex container</td>
+          </tr>
+          <tr>
+            <td>inline-grid</td>
+            <td>Displays an element as an inline-level grid container</td>
+          </tr>
+          <tr>
+            <td>inline-table</td>
+            <td>The element is displayed as an inline-level table</td>
+          </tr>
+          <tr>
+            <td>list-item</td>
+            <td>Let the element behave like a &lt;li&gt; element</td>
+          </tr>
+          <tr>
+            <td>run-in</td>
+            <td>
+              Displays an element as either block or inline, depending on
+              context
+            </td>
+          </tr>
+          <tr>
+            <td>table</td>
+            <td>Let the element behave like a &lt;table&gt; element</td>
+          </tr>
+          <tr>
+            <td>table-caption</td>
+            <td>Let the element behave like a &lt;caption&gt; element</td>
+          </tr>
+          <tr>
+            <td>table-column-group</td>
+            <td>Let the element behave like a &lt;colgroup&gt; element</td>
+          </tr>
+          <tr>
+            <td>table-header-group</td>
+            <td>Let the element behave like a &lt;thead&gt; element</td>
+          </tr>
+          <tr>
+            <td>table-footer-group</td>
+            <td>Let the element behave like a &lt;tfoot&gt; element</td>
+          </tr>
+          <tr>
+            <td>table-row-group</td>
+            <td>Let the element behave like a &lt;tbody&gt; element</td>
+          </tr>
+          <tr>
+            <td>table-cell</td>
+            <td>Let the element behave like a &lt;td&gt; element</td>
+          </tr>
+          <tr>
+            <td>table-column</td>
+            <td>Let the element behave like a &lt;col&gt; element</td>
+          </tr>
+          <tr>
+            <td>table-row</td>
+            <td>Let the element behave like a &lt;tr&gt; element</td>
+          </tr>
+          <tr>
+            <td>none</td>
+            <td>The element is completely removed</td>
+          </tr>
+          <tr>
+            <td>initial</td>
+            <td>Sets this property to its default value</td>
+          </tr>
+          <tr>
+            <td>inherit</td>
+            <td>Inherits this property from its parent element</td>
+          </tr>
+        </tbody>
+      </table>
+<hr/>
+      <h1 style="text-decoration: underline;">Display Example</h1>
+      <h2>display:inline</h2>
+      <p>The inline value of the display property allows a block-level element to behave like an inline element. The inline elements occupy only the required width for their content.</p>
+      <div>
+        <li>In New Line</li>
+        <li>In New Line</li>
+        <li>In New Line</li>
+          <li style="display: inline">
+            <a href="/html/default.asp" target="_blank">Same Line</a>
+          </li>
+          <li style="display: inline">
+            <a href="/css/default.asp" target="_blank">Same Line</a>
+          </li>
+          <li style="display: inline">
+            <a href="/js/default.asp" target="_blank">Same line</a>
+          </li>
+
+        <h2>Before display: inline</h2>
+        <div style="border: 1px solid red; ">I am a first div element.</div>
+        <div style="border: 1px solid red; ">I am a second div element.</div>
+
+        <h2>After display: inline</h2>
+        <div style="border: 1px solid red; display: inline;">I am a first div element.</div>
+        <div style="border: 1px solid red; display: inline;">I am a second div element.</div>
+        </div>
+        <hr/>
+        <h2>display:block</h2>
+        <h2>Before display: block</h2>
+        <span style="border: 1px solid red; ">I am a first span element.</span>
+        <span style="border: 1px solid red; ">I am a second span element.</span>
+
+        <h2>After display: block</h2>
+        <span style="border: 1px solid red; display: block;">I am a first span element.</span>
+        <span style="border: 1px solid red; display: block;">I am a second span element.</span>
+
+        <a href="#">Link 0</a>
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#" style="display: block;">Link 3</a>
+        <a href="#" style="display: block;">Link 4</a>
+
+        <hr/>
+        <h2>display:inline-block</h2>
+        <p>The inline-block value of the display property combines characteristics of inline and block elements.</p>
+        <h3>IMP POINTS BELOW</h3>
+        <li>It flows like an inline element allowing other elements to flow around horizontally.</li>
+        <li>It accepts the width and height properties. (By default, width and height don't work in inline elements.)</li>
+        <li>It accepts the padding and margin values. (By default, top and bottom margins don't work for inline elements, and padding also doesn't push other elements away(overlaps).)</li>
+        <h2>Before display: inline-block</h2>
+        <p>
+            In this paragraph, the <span style="border: 1px solid grey;height: 2rem; width: 5rem; margin-top: 4rem;margin-bottom: 4rem;padding-top: 3rem;padding-bottom: 3rem;"> span</span> element is color in
+            green-yellow color. The width and height don't work, the padding
+            value doesn't push surrounding content away, and the top/bottom
+            margins don't work.
+        </p>
+
+        <!-- Adding display: inline-block the divs -->
+
+        <h2>After display: inline-block</h2>
+        <p>
+            In this paragraph, the <span style="border: 1px solid grey; display: inline-block;height: 2rem; width: 5rem;  margin-top: 4rem;margin-bottom: 4rem;padding-top: 3rem;padding-bottom: 3rem;">span</span> element is
+            color in green-yellow color. The width and height work, the padding
+            value push surrounding content away, and the top/bottom margins
+            work.
+        </p>
+        
+
+    </div>
+    <h2>display:flex</h2>
+    <p>The display: flex; property establishes a flex container, enabling powerful and flexible layouts. Child elements of a flex container become flex items, allowing you to control their arrangement, alignment, and order easily.</p>
+    <h2>display:grid</h2>
+    <p>With display: grid;  you create a grid container that organizes its children into rows and columns. Grid layout offers precise control over the placement and sizing of elements within the grid, making complex layouts more manageable than with traditional methods.</p>
+
+      
+</div>
+  </body>
+</html>

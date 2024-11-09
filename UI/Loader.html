@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .loader {
+        width: 44.8px;
+        height: 44.8px;
+        color: #554cb5;
+        position: relative;
+        background: radial-gradient(11.2px, currentColor 94%, #0000);
+      }
+
+      .loader:before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        background: radial-gradient(
+              10.08px at bottom right,
+              #0000 94%,
+              currentColor
+            )
+            top left,
+          radial-gradient(10.08px at bottom left, #0000 94%, currentColor) top
+            right,
+          radial-gradient(10.08px at top right, #0000 94%, currentColor) bottom
+            left,
+          radial-gradient(10.08px at top left, #0000 94%, currentColor) bottom
+            right;
+        background-size: 22.4px 22.4px;
+        background-repeat: no-repeat;
+        animation: loader 1.5s infinite cubic-bezier(0.3, 1, 0, 1);
+      }
+
+      @keyframes loader {
+        33% {
+          inset: -11.2px;
+          transform: rotate(0deg);
+        }
+
+        66% {
+          inset: -11.2px;
+          transform: rotate(90deg);
+        }
+
+        100% {
+          inset: 0;
+          transform: rotate(90deg);
+        }
+      }
+      /* ----------------------- */
+      .loader2 {
+        width: 80px;
+        height: 50px;
+        position: relative;
+      }
+
+      .loader2-text {
+        position: absolute;
+        top: 0;
+        padding: 0;
+        margin: 0;
+        color: #c8b6ff;
+        animation: text_713 3.5s ease both infinite;
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+      }
+
+      .load2 {
+        background-color: #9a79ff;
+        border-radius: 50px;
+        display: block;
+        height: 16px;
+        width: 16px;
+        bottom: 0;
+        position: absolute;
+        transform: translateX(64px);
+        animation: loading_713 3.5s ease both infinite;
+      }
+
+      .load2::before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-color: #d1c2ff;
+        border-radius: inherit;
+        animation: loading2_713 3.5s ease both infinite;
+      }
+
+      @keyframes text_713 {
+        0% {
+          letter-spacing: 1px;
+          transform: translateX(0px);
+        }
+
+        40% {
+          letter-spacing: 2px;
+          transform: translateX(26px);
+        }
+
+        80% {
+          letter-spacing: 1px;
+          transform: translateX(32px);
+        }
+
+        90% {
+          letter-spacing: 2px;
+          transform: translateX(0px);
+        }
+
+        100% {
+          letter-spacing: 1px;
+          transform: translateX(0px);
+        }
+      }
+
+      @keyframes loading_713 {
+        0% {
+          width: 16px;
+          transform: translateX(0px);
+        }
+
+        40% {
+          width: 100%;
+          transform: translateX(0px);
+        }
+
+        80% {
+          width: 16px;
+          transform: translateX(64px);
+        }
+
+        90% {
+          width: 100%;
+          transform: translateX(0px);
+        }
+
+        100% {
+          width: 16px;
+          transform: translateX(0px);
+        }
+      }
+
+      @keyframes loading2_713 {
+        0% {
+          transform: translateX(0px);
+          width: 16px;
+        }
+
+        40% {
+          transform: translateX(0%);
+          width: 80%;
+        }
+
+        80% {
+          width: 100%;
+          transform: translateX(0px);
+        }
+
+        90% {
+          width: 80%;
+          transform: translateX(15px);
+        }
+
+        100% {
+          transform: translateX(0px);
+          width: 16px;
+        }
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <div
+      style="
+        position: fixed;
+        inset: 0px;
+        width: 12rem;
+        height: 5rem;
+        max-width: 100vw;
+        max-height: 100dvh;
+        margin: auto;
+      "
+    >
+      <div class="loader"></div>
+    </div>
+
+    <div
+      style="
+        position: fixed;
+        inset: 0px;
+        width: 12rem;
+        height: 5rem;
+        max-width: 100vw;
+        max-height: 100dvh;
+        margin: auto;
+      "
+    >
+      <div class="loader2" style="margin-top: 6rem">
+        <span class="loader2-text">loading</span>
+        <span class="load2"></span>
+      </div>
+    </div>
+  </body>
+</html>

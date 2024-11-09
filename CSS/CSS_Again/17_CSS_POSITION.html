@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        width: 200px;
+        height: 200px;
+        background-color: lightblue;
+        position: relative;
+      }
+
+      .item {
+        width: 50px;
+        height: 50px;
+        background-color: lightcoral;
+        position: absolute;
+      }
+
+      .item1 {
+        top: 20px;
+        left: 20px;
+      }
+
+      .item2 {
+        bottom: 20px;
+        right: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CSS POSITION PROPERTY</h1>
+
+    <div>
+      <h2>Relative</h2>
+      <li>
+        - The element is positioned according to the normal flow of the
+        document, and then offset relative to itself based on the values of top,
+        right, bottom, and left.
+      </li>
+      <li>
+        - position changes on its current position in t-r-b-l direction(relative
+        to actual postition)
+      </li>
+      <h2>Absolute</h2>
+      <li>
+        The element is removed from the normal document flow, and no space is
+        created for the element in the page layout. It is positioned relative to
+        its closest positioned non-static ancestor.
+      </li>
+      <li>
+        position changes based on its immediate non-static parent in t-r-b-l
+        direction(relative to immediate non-static parent postition)
+      </li>
+      <h2>Fixed</h2>
+      <li>
+        The element is removed from the normal document flow, and no space is
+        created for the element in the page layout.
+      </li>
+      <li>
+        It is positioned relative to the initial containing block established by
+        the viewport(mostly body), except when one of its ancestors has a
+        transform, perspective, or filter property set to something other than
+        none
+      </li>
+      <h2>Sticky</h2>
+      <li>
+        The element is positioned according to the normal flow of the document,
+        and then offset relative to its nearest scrolling ancestor
+      </li>
+      <li>
+        Note that a sticky element "sticks" to its nearest ancestor that has a
+        "scrolling mechanism" (created when overflow is hidden, scroll, auto, or
+        overlay), even if that ancestor isn't the nearest actually scrolling
+        ancestor.
+      </li>
+      <li>
+        A sticky element toggles between relative and fixed, depending on the
+        scroll position.
+      </li>
+    </div>
+    <br />
+
+    <div class="container">
+      <div class="item item1">top-left offset</div>
+      <div class="item item2">bottom-right offset</div>
+    </div>
+    <hr />
+    <h1>All position is property added on 2nd(middle) element</h1>
+
+    <h1>position:static</h1>
+    <div style="border: 2px solid red; margin: 3rem">
+      <div style="border: 2px solid rgb(161, 25, 224); margin: 3rem">
+        <div
+          style="
+            border: 2px solid rgb(249, 22, 174);
+            margin: 3rem;
+            height: 6rem;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+          "
+        >
+          <div style="border: 2px solid red; height: 3rem">
+            <h2>Hello</h2>
+          </div>
+          <div style="border: 2px solid red; height: 3rem">
+            <h2>Hello</h2>
+          </div>
+          <div style="border: 2px solid red; height: 3rem">
+            <h2>Hello</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <h1>position: relative; top: 2rem</h1>
+
+    <div style="border: 2px solid red; margin: 3rem">
+      <div style="border: 2px solid rgb(161, 25, 224); margin: 3rem">
+        <div
+          style="
+            border: 2px solid rgb(249, 22, 174);
+            margin: 3rem;
+            height: 6rem;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+          "
+        >
+          <div style="border: 2px solid red; height: 3rem">
+            <h2>Hello</h2>
+          </div>
+          <div
+            style="
+              border: 2px solid red;
+              height: 3rem;
+              position: relative;
+              top: 2rem;
+            "
+          >
+            <h2>Hello</h2>
+          </div>
+          <div style="border: 2px solid red; height: 3rem">
+            <h2>Hello</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h1>position: absolute; top: 2rem;</h1>
+    <div style="border: 2px solid red; margin: 3rem">
+      <div
+        style="
+          border: 2px solid rgb(161, 25, 224);
+          margin: 3rem;
+          position: relative;
+        "
+      >
+        <div
+          style="
+            border: 2px solid rgb(249, 22, 174);
+            margin: 3rem;
+            height: 6rem;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            position: relative;
+          "
+        >
+          <div style="border: 2px solid red; height: 3rem">
+            <h2>Hello</h2>
+          </div>
+          <div
+            style="
+              border: 2px solid red;
+              height: 3rem;
+              position: absolute;
+              top: 2rem;
+            "
+          >
+            <h2>Hello</h2>
+          </div>
+          <div style="border: 2px solid red; height: 3rem">
+            <h2>Hello</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h1>position: fixed; top: 2rem;</h1>
+    <div style="border: 2px solid red; margin: 3rem">
+      <div style="border: 2px solid rgb(161, 25, 224); margin: 3rem">
+        <div
+          style="
+            border: 2px solid rgb(249, 22, 174);
+            margin: 3rem;
+            height: 6rem;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+          "
+        >
+          <div style="border: 2px solid red; height: 3rem">
+            <h2>Hello</h2>
+          </div>
+          <div
+            style="
+              border: 2px solid red;
+              height: 3rem;
+              position: fixed;
+              top: 2rem;
+            "
+          >
+            <h2>position:fixed;top: 2rem</h2>
+          </div>
+          <div style="border: 2px solid red; height: 3rem">
+            <h2>Hello</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h1>position: sticky; top: 2rem;</h1>
+    <div style="border: 2px solid red; margin: 3rem">
+      <div style="border: 2px solid rgb(161, 25, 224); margin: 3rem">
+        <div
+          style="
+            border: 2px solid rgb(249, 22, 174);
+            margin: 3rem;
+            height: 60rem;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+          "
+        >
+          <div style="border: 2px solid red; height: 3rem">
+            <h2>Hello</h2>
+          </div>
+          <div
+            style="
+              border: 2px solid red;
+              height: 3rem;
+              position: sticky;
+              top: 6rem;
+            "
+          >
+            <h2>position:sticky;top: 6rem</h2>
+          </div>
+          <div style="border: 2px solid red; height: 3rem">
+            <h2>Hello</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

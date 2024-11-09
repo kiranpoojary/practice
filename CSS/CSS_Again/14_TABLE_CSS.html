@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #customers {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      #customers td,
+      #customers th {
+        border: 1px solid #ddd;
+        padding: 8px;
+      }
+
+      #customers tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+
+      #customers tr:hover {
+        background-color: #ddd;
+      }
+
+      #customers th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #04aa6d;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>HTML Table</h1>
+      <table id="customers">
+        <tr>
+          <th>Company</th>
+          <th>Contact</th>
+          <th>Country</th>
+        </tr>
+        <tr>
+          <td>Alfreds Futterkiste</td>
+          <td>Maria Anders</td>
+          <td>Germany</td>
+        </tr>
+        <tr>
+          <td>Berglunds snabbköp</td>
+          <td>Christina Berglund</td>
+          <td>Sweden</td>
+        </tr>
+        <tr>
+          <td>Centro comercial Moctezuma</td>
+          <td>Francisco Chang</td>
+          <td>Mexico</td>
+        </tr>
+        <tr>
+          <td>Ernst Handel</td>
+          <td>Roland Mendel</td>
+          <td>Austria</td>
+        </tr>
+        <tr>
+          <td>Island Trading</td>
+          <td>Helen Bennett</td>
+          <td>UK</td>
+        </tr>
+        <tr>
+          <td>Königlich Essen</td>
+          <td>Philip Cramer</td>
+          <td>Germany</td>
+        </tr>
+        <tr>
+          <td>Laughing Bacchus Winecellars</td>
+          <td>Yoshi Tannamuri</td>
+          <td>Canada</td>
+        </tr>
+        <tr>
+          <td>Magazzini Alimentari Riuniti</td>
+          <td>Giovanni Rovelli</td>
+          <td>Italy</td>
+        </tr>
+        <tr>
+          <td>North/South</td>
+          <td>Simon Crowther</td>
+          <td>UK</td>
+        </tr>
+        <tr>
+          <td>Paris spécialités</td>
+          <td>Marie Bertrand</td>
+          <td>France</td>
+        </tr>
+      </table>
+
+      <h1>Full-Width Table</h1>
+      <p>
+        The table above might seem small in some cases. If you need a table that
+        should span the entire screen (full-width), add width: 100% to the
+        &lt;table&gt; element
+      </p>
+
+      <h1>Collapse Table Borders</h1>
+      <p>
+        The border-collapse property sets whether the table borders should be
+        collapsed into a single border:
+      </p>
+      <pre>
+        table {
+            border-collapse: collapse;
+          }
+      </pre>
+
+      <h1>Table Width and Height</h1>
+      <pre>
+        table {
+            width: 100%;
+          }
+          
+          th {
+            height: 70px;
+          }
+      </pre>
+
+      <h1>CSS Table Alignment</h1>
+      <h2>Horizontal Alignment</h2>
+      <pre>
+        th {
+            text-align: left;
+          }
+      </pre>
+
+      <h2>Vertical Alignment</h2>
+      <pre>
+        td {
+            height: 50px;
+            vertical-align: bottom;
+          }
+      </pre>
+
+      <h1>CSS Table Style</h1>
+      <li>Table Padding</li>
+      <pre>
+        th, td {
+            padding: 15px;
+            text-align: left;
+          }
+      </pre>
+
+      <li>Horizontal Dividers</li>
+      <pre>
+        th, td {
+            border-bottom: 1px solid #ddd;
+          }
+      </pre>
+
+      <li>Hoverable Table</li>
+      <pre>
+        tr:hover {background-color: coral;}
+
+      </pre>
+
+      <li>Striped Tables</li>
+      <pre>
+        tr:nth-child(even) {background-color: #f2f2f2;}
+      </pre>
+
+      <li>Table Color</li>
+      <pre>
+        th {
+            background-color: #04AA6D;
+            color: white;
+          }
+      </pre>
+
+      <h1>CSS Responsive Table</h1>
+      <p>
+        A responsive table will display a horizontal scroll bar if the screen is
+        too small to display the full content:
+      </p>
+      <p>Add a container element (like <div>) with overflow-x:auto around the <table> element to make it responsive:</p>
+        <pre>
+            &lt;div style="overflow-x:auto;"&gt;
+
+                &lt;table&gt;
+                ... table content ...
+                &lt;/table&gt;
+                
+            &lt;/div&gt;
+        </pre>
+    </div>
+  </body>
+</html>

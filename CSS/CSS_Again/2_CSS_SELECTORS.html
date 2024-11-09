@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      p {
+        color: red;
+        text-decoration: underline;
+        font-weight: 600;
+      }
+
+      h1 {
+        color: rgb(25, 244, 25);
+      }
+
+      #myId {
+        color: blue;
+        font-weight: 400;
+      }
+
+      #yourId {
+        color: rgb(220, 185, 9);
+        font-weight: 400;
+        font-family: "Times New Roman", Times, serif;
+      }
+
+      .myClass {
+        color: rgb(245, 25, 164);
+        font-weight: 400;
+      }
+
+      .yourClass {
+        color: rgb(137, 52, 234);
+        font-weight: 400;
+        font-family: "Times New Roman", Times, serif;
+      }
+      button.myBtn {
+        background-color: aquamarine;
+      }
+
+      button.yourBtn {
+        background-color: rgb(89, 239, 59);
+      }
+      h3,
+      h4,
+      h5 {
+        color: cadetblue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Intro and Syntax</h1>
+    <p>
+      CSS selectors are used to "find" (or select) the HTML elements you want to
+      style.
+    </p>
+    <h4>We can divide CSS selectors into five categories:</h4>
+    <ol>
+      <li>Simple selectors (select elements based on name, id, class)</li>
+      <li>
+        Combinator selectors (select elements based on a specific relationship
+        between them)
+      </li>
+      <li>Pseudo-class selectors (select elements based on a certain state)</li>
+      <li>Pseudo-elements selectors (select and style a part of an element)</li>
+      <li>
+        Attribute selectors (select elements based on an attribute or attribute
+        value)
+      </li>
+    </ol>
+    <h2><u>Styling with different selectors</u></h2>
+    <div>
+      <p>ELEMENT SELECTOR</p>
+      <h1>ELEMENT SELECTOR</h1>
+      <div id="myId">ID SELECTOR</div>
+      <div id="yourId">ID SELECTOR</div>
+      <div class="myClass">CLASS SELECTOR</div>
+      <div class="yourClass">CLASS SELECTOR</div>
+      <button class="myBtn">ELEMENT WITH CLASS SELECTOR</button>
+      <button class="btn">ELEMENT WITH CLASS SELECTOR</button>
+      <button class="yourBtn">ELEMENT WITH CLASS SELECTOR</button>
+      <div style="margin-top: 10px">
+        <span style="font-size: 1.5rem">The CSS Universal Selector</span>:- The
+        universal selector (*) selects all HTML elements on the page. like :-
+        *{color:red;}
+      </div>
+    </div>
+
+    <h3>GROUPED SELECTOR</h3>
+    <h4>GROUPED SELECTOR</h4>
+    <h5>GROUPED SELECTOR</h5>
+  </body>
+</html>

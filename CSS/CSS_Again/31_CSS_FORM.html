@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <pre>
+        Use the width property to determine the width of the input field:
+        
+        input {
+            width: 100%;
+          }
+            
+          input[type=text] - will only select text fields
+          input[type=password] - will only select password fields
+          input[type=number] - will only select number fields
+          etc..
+
+        </pre
+      >
+      <h1>Padded Inputs</h1>
+      <p>Use the padding property to add space inside the text field.</p>
+      <pre>
+        input[type=text] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+          }
+      </pre>
+
+      <h1>Bordered Inputs</h1>
+      <p>
+        Use the border property to change the border size and color, and use the
+        border-radius property to add rounded corners:
+      </p>
+      <pre>
+        input[type=text] {
+            border: 2px solid red;
+            border-radius: 4px;
+          }
+
+        IMP: If you only want a bottom border, use the border-bottom property:
+
+        input[type=text] {
+            border: none;
+            border-bottom: 2px solid red;
+          }
+
+      </pre>
+      <h1>Colored Inputs</h1>
+      <p>
+        Use the background-color property to add a background color to the
+        input, and the color property to change the text color:
+      </p>
+      <pre>
+        input[type=text] {
+            background-color: #3CBC8D;
+            color: white;
+          }
+      </pre>
+      <h1>Focused Inputs</h1>
+      <p>
+        By default, some browsers will add a blue outline around the input when
+        it gets focus (clicked on). You can remove this behavior by adding
+        outline: none; to the input.
+      </p>
+      <p>
+        Use the :focus selector to do something with the input field when it
+        gets focus:
+      </p>
+      <pre>
+        input[type=text]:focus {
+            background-color: lightblue;
+          }
+
+        input[type=text]:focus {
+            border: 3px solid #555;
+          }
+      </pre>
+
+      <h1>Input with icon/image</h1>
+      <p>
+        If you want an icon inside the input, use the background-image property
+        and position it with the background-position property. Also notice that
+        we add a large left padding to reserve the space of the icon:
+      </p>
+
+      <pre>
+        input[type=text] {
+            background-color: white;
+            background-image: url('searchicon.png');
+            background-position: 10px 10px;
+            background-repeat: no-repeat;
+            padding-left: 40px;
+          }
+      </pre>
+
+      <h1>Animated Search Input</h1>
+      <p>
+        In this example we use the CSS transition property to animate the width
+        of the search input when it gets focus.
+      </p>
+      <pre>
+        input[type=text] {
+            transition: width 0.4s ease-in-out;
+          }
+          
+          input[type=text]:focus {
+            width: 100%;
+          }
+      </pre>
+
+      <h1>Styling Textareas</h1>
+      <p>
+        Tip: Use the resize property to prevent textareas from being resized
+        (disable the "grabber" in the bottom right corner):
+      </p>
+      <pre>
+        textarea {
+            width: 100%;
+            height: 150px;
+            padding: 12px 20px;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            background-color: #f8f8f8;
+            resize: none;
+          }
+      </pre>
+      <h1>Styling Select Menus</h1>
+      <pre>
+        select {
+            width: 100%;
+            padding: 16px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #f1f1f1;
+          }
+      </pre>
+      <h1>Styling Input Buttons</h1>
+      <pre>
+        input[type=button], input[type=submit], input[type=reset] {
+            background-color: #04AA6D;
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+          }
+          
+          /* Tip: use width: 100% for full-width buttons */
+      </pre>
+      <h1>Responsive Form</h1>
+    </div>
+  </body>
+</html>

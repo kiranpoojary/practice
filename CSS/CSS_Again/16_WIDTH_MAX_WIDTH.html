@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>width and max-width</h1>
+    <li>
+      a block-level element always takes up the full width available (stretches
+      out to the left and right as far as it can)
+    </li>
+    <li>
+      Setting the width of a block-level element will prevent it from stretching
+      out to the edges of its container. Then, you can set the margins to auto,
+      to horizontally center the element within its container.
+    </li>
+    <li>
+      The element will take up the specified width, and the remaining space will
+      be split equally between the two margins
+    </li>
+    <li>
+      <span style="font-weight: 800">Note:</span> The problem with the block ele
+      occurs when the browser window is smaller than the width of the element.
+      The browser then adds a horizontal scrollbar to the page.
+    </li>
+    <h2>change screen size to see the diff</h2>
+    <div style="border: 1px solid red">"border: 1px solid red"</div>
+    <div style="border: 1px solid red; width: 800px">
+      "border: 1px solid red; width: 800px"
+    </div>
+    <div style="border: 1px solid red; max-width: 800px">
+      "border: 1px solid red; max-width: 800px"
+    </div>
+    <div style="border: 1px solid red; min-width: 600px">
+      "border: 1px solid red; min-width: 600px"
+    </div>
+    <div style="border: 1px solid red; max-width: 800px; min-width: 600px">
+      "border: 1px solid red;max-width: 800px; min-width: 600px"
+    </div>
+  </body>
+</html>

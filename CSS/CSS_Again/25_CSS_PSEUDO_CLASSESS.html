@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      p:first-child {
+        color: blue;
+      }
+
+      li:first-child {
+        color: blue;
+      }
+
+      p i:first-child {
+        color: blue;
+      }
+
+      p.aaa:first-child i {
+        color: blue;
+      }
+
+      q:lang(no) {
+          quotes: "~" "~";
+        }
+    </style>
+  </head>
+
+  <body>
+    <h1 style="display: inline-block">Please refere W3 School for example</h1>
+    <a
+      style="font-size: 2rem"
+      href="https://www.w3schools.com/css/css_pseudo_classes.asp"
+      >Ref</a
+    >
+    <p>first-child</p>
+    <p>first-child</p>
+    <div>
+      <h1>CSS Pseudo-classes</h1>
+      <p>A pseudo-class is used to define a special state of an element.</p>
+      <h2>For example, it can be used to:</h2>
+      <li>Style an element when a user mouses over it</li>
+      <li>Style visited and unvisited links differently</li>
+      <li>Style an element when it gets focus</li>
+    </div>
+
+    <h2>Syntax</h2>
+    <pre>
+      selector:pseudo-class {
+        property: value;
+      }
+    </pre>
+
+    <h2>Anchor Pseudo-classes</h2>
+    <p>Links can be displayed in different ways:</p>
+    <pre>
+        /* unvisited link */
+        a:link {
+          color: #FF0000;
+        }
+
+        /* visited link */
+        a:visited {
+          color: #00FF00;
+        }
+
+        /* mouse over link */
+        a:hover {
+          color: #FF00FF;
+        }
+
+        /* selected link */
+        a:active {
+          color: #0000FF;
+        }
+    </pre>
+    <li>
+      <span>Note:</span> a:hover MUST come after a:link and a:visited in the CSS
+      definition in order to be effective! a:active MUST come after a:hover in
+      the CSS definition in order to be effective! Pseudo-class names are not
+      case-sensitive.
+    </li>
+
+    <h1>Pseudo-classes + HTML Classes</h1>
+    <p>Pseudo-classes can be combined with HTML classes:</p>
+    <p>When you hover over the link in the example, it will change color:</p>
+    <pre>
+      a.highlight:hover {
+        color: #ff0000;
+      }
+    </pre>
+
+    <h1>Hover on &lt;div&gt;</h1>
+    <pre>
+      div:hover {
+        background-color: blue;
+      }
+    </pre>
+
+    <h1>Simple Tooltip Hover</h1>
+    <pre>
+      p {
+        display: none;
+        background-color: yellow;
+        padding: 20px;
+      }
+
+      div:hover p {
+        display: block;
+      }
+    </pre>
+    <div>
+      Hover over this div element to show the p element
+      <p>||Tada! Here I am!||</p>
+    </div>
+
+    <h1>CSS - The :first-child Pseudo-class</h1>
+    <p>
+      The :first-child pseudo-class matches a specified element that is the
+      first child of another element.
+    </p>
+
+    <pre>
+      p:first-child {
+        color: blue;
+      }
+
+      li:first-child {
+        color: blue;
+      }
+      
+    </pre>
+
+    <div>
+      <p>This is some text.</p>
+      <p>This is some text.</p>
+    </div>
+
+    <div>
+      <p>This is some text.</p>
+      <p>This is some text.</p>
+      <p>This is some text.</p>
+    </div>
+    <div>
+      <div>Break first child</div>
+      <p>This is some text.</p>
+      <p>This is some text.</p>
+      <p>This is some text.</p>
+    </div>
+    <ol>
+      <li>OK</li>
+      <li>OK</li>
+      <li>OK</li>
+    </ol>
+
+    <div>
+      <h2>Match the first &lt;i&gt; element in all &lt;p&gt; elements</h2>
+      <p>
+        In the following example, the selector matches the first &lt;i&gt;
+        element in all &lt;p&gt; elements:
+      </p>
+      <pre>
+        p i:first-child {
+          color: blue;
+        }
+      </pre>
+      <p>I am a <i>strong</i> person. I am a <i>strong</i> person.</p>
+      <p>I am a <i>strong</i> person. I am a <i>strong</i> person.</p>
+    </div>
+
+    <h1>Match all &lt;i&gt; element in all first child elements</h1>
+    <p>
+      In the following example, the selector matches all &lt;i&gt; elements in
+      &lt;p&gt; elements that are the first child of another element:
+    </p>
+    <pre>
+      p:first-child i {
+        color: blue;
+      }
+    </pre>
+    <div>
+      <p class="aaa">
+        I am a <i>strong</i> person. I am a <i>strong</i> person.
+      </p>
+      <p class="aaa">
+        I am a <i>strong</i> person. I am a <i>strong</i> person.
+      </p>
+    </div>
+
+    <div>
+      <p class="aaa">
+        I am a <i>strong</i> person. I am a <i>strong</i> person.
+      </p>
+      <p class="aaa">
+        I am a <i>strong</i> person. I am a <i>strong</i> person.
+      </p>
+    </div>
+    <h1>CSS - The :lang Pseudo-class</h1>
+    <p>
+      The :lang pseudo-class allows you to define special rules for different
+      languages.
+    </p>
+    <p>In the example below, :lang defines the quotation marks for <q> elements with lang="no":</p>
+      <pre>
+        q:lang(no) {
+          quotes: "~" "~";
+        }
+      </pre>
+      <p>Some text <q lang="no">A quote in a paragraph</q> Some text.</p>
+
+  </body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #rcorners1 {
+        border-radius: 25px;
+        background: #73ad21;
+        padding: 20px;
+        width: 200px;
+        height: 150px;
+      }
+
+      #rcorners2 {
+        border-radius: 25px;
+        border: 2px solid #73ad21;
+        padding: 20px;
+        width: 200px;
+        height: 150px;
+      }
+
+      #rcorners3 {
+        color: antiquewhite;
+        border-radius: 25px;
+        background: url(image-1.png);
+        background-position: left top;
+        background-repeat: repeat;
+        padding: 20px;
+        width: 200px;
+        height: 150px;
+      }
+
+      #rcorners4 {
+        border-radius: 15px 50px 30px 5px;
+        background: #73ad21;
+        padding: 20px;
+        width: 200px;
+        height: 150px;
+      }
+
+      #rcorners5 {
+        border-radius: 15px 50px 30px;
+        background: #73ad21;
+        padding: 20px;
+        width: 200px;
+        height: 150px;
+      }
+
+      #rcorners6 {
+        border-radius: 15px 50px;
+        background: #73ad21;
+        padding: 20px;
+        width: 200px;
+        height: 150px;
+      }
+
+      #rcorners7 {
+        border-radius: 15px;
+        background: #73ad21;
+        padding: 20px;
+        width: 200px;
+        height: 150px;
+      }
+      #rcorners8 {
+        border-radius: 50px / 15px;
+        background: #73ad21;
+        padding: 20px;
+        width: 200px;
+        height: 150px;
+      }
+
+      #rcorners9 {
+        border-radius: 15px / 50px;
+        background: #73ad21;
+        padding: 20px;
+        width: 200px;
+        height: 150px;
+      }
+
+      #rcorners10 {
+        border-radius: 50%;
+        background: #73ad21;
+        padding: 20px;
+        width: 200px;
+        height: 150px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>CSS Rounded Corners</h1>
+      <p>
+        With the CSS border-radius property, you can give any element "rounded
+        corners".
+      </p>
+      <h1>CSS border-radius Property</h1>
+      <p>
+        The CSS border-radius property defines the radius of an element's
+        corners.
+      </p>
+      <p>Tip: This property allows you to add rounded corners to elements!</p>
+    </div>
+    <div>
+      <h1>The border-radius Property</h1>
+
+      <p>Rounded corners for an element with a specified background color:</p>
+      <p id="rcorners1">Rounded corners!</p>
+      <p>Rounded corners for an element with a border:</p>
+      <p id="rcorners2">Rounded corners!</p>
+      <p>Rounded corners for an element with a background image:</p>
+      <p id="rcorners3">Rounded corners!</p>
+    </div>
+    <div>
+      <h1>CSS border-radius - Specify Each Corner</h1>
+      <p>
+        The border-radius property can have from one to four values. Here are
+        the rules:
+      </p>
+      <p>
+        Four values - border-radius: 15px 50px 30px 5px; (first value applies to
+        top-left corner, second value applies to top-right corner, third value
+        applies to bottom-right corner, and fourth value applies to bottom-left
+        corner)
+      </p>
+      <h1 style="color: blue; border: 2px solid gold; padding: 1rem">
+        top-left , top-right corner, bottom-right, bottom-left
+      </h1>
+      <h1>The border-radius Property</h1>
+
+      <p>Four values - border-radius: 15px 50px 30px 5px:</p>
+      <p id="rcorners4"></p>
+
+      <p>Three values - border-radius: 15px 50px 30px:</p>
+      <p id="rcorners5"></p>
+
+      <p>Two values - border-radius: 15px 50px:</p>
+      <p id="rcorners6"></p>
+
+      <p>One value - border-radius: 15px:</p>
+      <p id="rcorners7"></p>
+      <p>Elliptical border - border-radius: 50px / 15px:</p>
+      <p id="rcorners8"></p>
+
+      <p>Elliptical border - border-radius: 15px / 50px:</p>
+      <p id="rcorners9"></p>
+
+      <p>Ellipse border - border-radius: 50%:</p>
+      <p id="rcorners10"></p>
+    </div>
+  </body>
+</html>

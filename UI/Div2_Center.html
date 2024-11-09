@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      
+        .first {
+            width: 32%;
+            display: inline-block;
+            background-color: green;
+        }
+
+        .second {
+            width: 32%;
+            display: inline-block;
+            background-color: blue;
+        }
+
+        .third {
+            width: 32%;
+            display: inline-block;
+            background-color: yellow;
+        }
+
+        @media screen and (max-width: 500px) {
+
+            .first,
+            .second,
+            .third {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+   <div class="first">
+        <p>First block</p>
+    </div>
+    <div class="second">
+        <p>Second block</p>
+    </div>
+    <div class="third">
+        <p>Third block </p>
+    </div>
+   
+</body>
+
+</html>

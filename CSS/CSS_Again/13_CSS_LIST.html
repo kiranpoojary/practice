@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      ul.a {
+        list-style-type: circle;
+      }
+
+      ul.b {
+        list-style-type: square;
+      }
+
+      ol.c {
+        list-style-type: upper-roman;
+      }
+
+      ol.d {
+        list-style-type: lower-alpha;
+      }
+      ul.e {
+        list-style-image: url("9_CSS_TEST.png");
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h2>The list-style-type Property</h2>
+
+      <p>Example of unordered lists:</p>
+      <ul class="a">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+      </ul>
+
+      <ul class="b">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+      </ul>
+
+      <p>Example of ordered lists:</p>
+      <ol class="c">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+      </ol>
+
+      <ol class="d">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+      </ol>
+
+      <p>
+        The list-style-image property specifies an image as the list item
+        marker:
+      </p>
+
+      <pre>
+        ul {
+            list-style-image: url('sqpurple.gif');
+          }
+      </pre>
+
+      <h1>Position The List Item Markers</h1>
+
+      <h1>The list-style-position Property</h1>
+      <style>
+        ul.aa {
+          list-style-position: outside;
+        }
+
+        ul.bb {
+          list-style-position: inside;
+        }
+      </style>
+      <h2>list-style-position: outside (default):</h2>
+      <ul class="aa">
+        <li>
+          Coffee - A brewed drink prepared from roasted coffee beans, which are
+          the seeds of berries from the Coffea plant,which are the seeds of
+          berries from the Coffea plant,which are the seeds of berries from the
+          Coffea plant
+        </li>
+        <li>
+          Coffee - A brewed drink prepared from roasted coffee beans, which are
+          the seeds of berries from the Coffea plant,which are the seeds of
+          berries from the Coffea plant,which are the seeds of berries from the
+          Coffea plant
+        </li>
+        <li>
+          Coca Cola - A carbonated soft drink produced by The Coca-Cola Company.
+          The drink's name refers to two of its original ingredients, which were
+          kola nuts (a source of caffeine) and coca leaves
+        </li>
+      </ul>
+
+      <h2>list-style-position: inside:</h2>
+      <ul class="bb">
+        <li>
+          Coca Cola - A carbonated soft drink produced by The Coca-Cola Company.
+          The drink's name refers to two of its original ingredients, which were
+          kola nuts (a source of caffeine) and coca leaves
+        </li>
+        <li>
+          Coffee - A brewed drink prepared from roasted coffee beans, which are
+          the seeds of berries from the Coffea plant,which are the seeds of
+          berries from the Coffea plant,which are the seeds of berries from the
+          Coffea plant
+        </li>
+        <li>
+          Coca Cola - A carbonated soft drink produced by The Coca-Cola Company.
+          The drink's name refers to two of its original ingredients, which were
+          kola nuts (a source of caffeine) and coca leaves
+        </li>
+      </ul>
+      <h1>Styling List With Colors</h1>
+      <pre>
+        ol {
+            background: #ff9999;
+            padding: 20px;
+          }
+          
+          ul {
+            background: #3399ff;
+            padding: 20px;
+          }
+          
+          ol li {
+            background: #ffe5e5;
+            color: darkred;
+            padding: 5px;
+            margin-left: 35px;
+          }
+          
+          ul li {
+            background: #cce5ff;
+            color: darkblue;
+            margin: 5px;
+          }
+      </pre>
+    </div>
+  </body>
+</html>

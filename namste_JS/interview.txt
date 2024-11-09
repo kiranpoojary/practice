@@ -1,0 +1,18 @@
+function test(){
+    let values = [{a:1,b:2},{a:2,b:3},{a:2,b:4}]
+    
+    let result = {};
+    for(let i= 0; i< values.length; i++) {
+        let data = Object.hasOwnProperty(result[i])
+        let keys = Object.keys(values[i]);
+        for(let j=0; j< keys.length ;j++) {
+             if(data == false) {
+                result[keys[j]] = values[i][keys[j]]
+                }else {
+                   result[keys[j]] += values[i][keys[j]] 
+                }
+            }
+       
+    }
+}
+    console.log(result)

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #example1 {
+        background-image: url(image-1.png), url(image-2.png);
+        background-position: right bottom, left top;
+        background-repeat: no-repeat, repeat;
+        padding: 15px;
+      }
+      #example2 {
+        border: 1px solid black;
+        background: url(image-1.png);
+        background-size: 100px 80px;
+        background-repeat: no-repeat;
+        padding: 15px;
+      }
+
+      #example3 {
+        border: 1px solid black;
+        background: url(image-1.png);
+        background-repeat: no-repeat;
+        padding: 15px;
+      }
+      #example4 {
+        background: url(image-1.png) left top no-repeat,
+          url(image-2.png) right bottom no-repeat,
+          url(image-3-bckg.png) left top repeat;
+        padding: 15px;
+        background-size: 50px, 130px, auto;
+      }
+      .hero-image {
+        background: url(image-1.png) no-repeat center;
+        background-size: cover;
+        height: 500px;
+        position: relative;
+      }
+
+      .hero-text {
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>CSS Multiple Backgrounds</h1>
+      <p>
+        CSS allows you to add multiple background images for an element, through
+        the background-image property.
+      </p>
+      <p>
+        The different background images are separated by commas, and the images
+        are stacked on top of each other, where the first image is closest to
+        the viewer.
+      </p>
+      <p>The following div element has two background images:</p>
+
+      <div id="example1">
+        <h1>Lorem Ipsum Dolor</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+          nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+          volutpat.
+        </p>
+        <p>
+          Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
+          suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+        </p>
+      </div>
+      <p>
+        Multiple background images can be specified using either the individual
+        background properties (as above) or the background shorthand property.
+      </p>
+      <pre>
+        #example1 {
+            background: url(img_flwr.gif) right bottom no-repeat, url(paper.gif) left top repeat;
+          }
+      </pre>
+      <h1>CSS Background Size</h1>
+      <p>
+        The CSS background-size property allows you to specify the size of
+        background images.The size can be specified in lengths, percentages, or
+        by using one of the two keywords: contain or cover.
+      </p>
+      <div>
+        The following example resizes a background image to much smaller than
+        the original image
+      </div>
+
+      <p>Resized background-image:</p>
+      <div id="example2">
+        <h2>Lorem Ipsum Dolor</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+          nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+          volutpat.
+        </p>
+        <p>
+          Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
+          suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+        </p>
+      </div>
+
+      <p>Original size of the background-image:</p>
+      <div id="example3">
+        <h2>Lorem Ipsum Dolor</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+          nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+          volutpat.
+        </p>
+        <p>
+          Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
+          suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+        </p>
+      </div>
+      <p>
+        The two other possible values for background-size are contain and cover.
+      </p>
+      <p>
+        The contain keyword scales the background image to be as large as
+        possible (but both its width and its height must fit inside the content
+        area)
+      </p>
+      <p>
+        The cover keyword scales the background image so that the content area
+        is completely covered by the background image (both its width and height
+        are equal to or exceed the content area).
+      </p>
+    </div>
+    <div id="example4">
+      <h1>Lorem Ipsum Dolor</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+        nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+        volutpat.
+      </p>
+      <p>
+        Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
+        suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+      </p>
+    </div>
+    <h1>Hero Image</h1>
+    <div>
+      You could also use different background properties on a &lt;div&gt; to
+      create a hero image (a large image with text), and place it where you
+      want.
+    </div>
+    <div class="hero-image">
+      <div class="hero-text">
+        <h1 style="font-size: 50px">I am John Doe</h1>
+        <h3>And I'm a Photographer</h3>
+        <button>Hire me</button>
+      </div>
+    </div>
+
+    <p>Page content..</p>
+    <p>
+      Note that this technique will also make the image responsive: Resize the
+      browser window to see the effect.
+    </p>
+  </body>
+</html>

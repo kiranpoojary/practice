@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #p1 {
+        background-color: hsl(120, 100%, 50%);
+      }
+      #p2 {
+        background-color: hsl(120, 100%, 75%);
+      }
+      #p3 {
+        background-color: hsl(120, 100%, 25%);
+      }
+      #p4 {
+        background-color: hsl(120, 60%, 70%);
+      }
+      #p5 {
+        background-color: hsl(290, 100%, 50%);
+      }
+      #p6 {
+        background-color: hsl(290, 60%, 70%);
+      }
+
+      .divbody {
+        background-image: url(image-3-bckg.png);
+        padding: 3rem;
+      }
+
+      div.ex1 {
+        background-color: lightgreen;
+        border: 2px solid black;
+        padding: 15px;
+      }
+
+      div.ex2 {
+        background-color: transparent;
+        border: 2px solid black;
+        padding: 15px;
+      }
+      div.currColor {
+        color: blue;
+        border: 10px solid currentcolor;
+        padding: 15px;
+      }
+
+      div.inheritBorder {
+        border: 2px solid red;
+      }
+
+      span {
+        border: inherit;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>CSS Colors</h1>
+      <h2>RGBA Colors</h2>
+      <p>
+        RGBA color values are an extension of RGB color values with an alpha
+        channel - which specifies the opacity for a color.
+      </p>
+      <p>
+        An RGBA color value is specified with: rgba(red, green, blue, alpha).
+        The alpha parameter is a number between 0.0 (fully transparent) and 1.0
+        (fully opaque).
+      </p>
+      <h2>HSL Colors</h2>
+      <p>HSL stands for Hue, Saturation and Lightness.</p>
+      <p>
+        An HSL color value is specified with: hsl(hue, saturation, lightness).
+      </p>
+      <pre>
+        1.Hue is a degree on the color wheel (from 0 to 360):
+            0 (or 360) is red
+            120 is green
+            240 is blue
+        2.Saturation is a percentage value: 100% is the full color.
+        3.Lightness is also a percentage; 0% is dark (black) and 100% is white.
+      </pre>
+      <h1>Define Colors With HSL Values</h1>
+
+      <p id="p1">Green</p>
+      <p id="p2">Light green</p>
+      <p id="p3">Dark green</p>
+      <p id="p4">Pastel green</p>
+      <p id="p5">Violet</p>
+      <p id="p6">Pastel violet</p>
+    </div>
+    <h2>HSLA Colors</h2>
+    <p>
+      HSLA color values are an extension of HSL color values with an alpha
+      channel - which specifies the opacity for a color.
+    </p>
+    <pre>
+            hsla(0, 100%, 30%, 0.3);
+    </pre>
+    <h1>Opacity</h1>
+    <li>
+      The CSS opacity property sets the opacity for the whole element (both
+      background color and text will be opaque/transparent).
+    </li>
+    <li>
+      The opacity property value must be a number between 0.0 (fully
+      transparent) and 1.0 (fully opaque).
+    </li>
+
+    <h1>CSS Color Keywords</h1>
+    <h3>
+      This page will explain the transparent, currentcolor, and inherit
+      keywords.
+    </h3>
+    <h2>transparent</h2>
+    <p>
+      The transparent keyword is used to make a color transparent. This is often
+      used to make a transparent background color for an element.
+    </p>
+    <div class="divbody">
+      <div class="ex1">This div has a light green background.</div>
+      <br />
+      <div class="ex2">This div has a transparent background.</div>
+    </div>
+    <h1>The currentcolor Keyword</h1>
+    <p>
+      The currentcolor keyword is like a variable that holds the current value
+      of the color property of an element.
+    </p>
+    <p>
+      The currentcolor keyword refers to the current value of the color property
+      of an element.
+    </p>
+
+    <div class="currColor">
+      This div element has a blue text color and a blue border.
+    </div>
+    <h2>The inherit Keyword</h2>
+    <p>
+      The inherit keyword specifies that a property should inherit its value
+      from its parent element.The inherit keyword can be used for any CSS
+      property, and on any HTML element.
+    </p>
+    <div class="inheritBorder">
+      Here, the <span>span element's</span> border settings will be inherited
+      from the parent element.
+    </div>
+    <br />
+
+    <div style="border: 2px dotted blue">
+      Here, the <span>span element's</span> border settings will also be
+      inherited from the parent element.
+    </div>
+    <pre>
+    From above example the word "span element's" got border from its parent i.e div 
+    </pre>
+  </body>
+</html>

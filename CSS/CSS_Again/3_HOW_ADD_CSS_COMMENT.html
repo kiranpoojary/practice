@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <h2>Three Ways to Insert CSS</h2>
+      There are three ways of inserting a style sheet:
+      <ol>
+        <li>External CSS I</li>
+        <li>Internal CSS</li>
+        <li>Inline CSS</li>
+      </ol>
+
+      <h2>1.External CSS : in Head section</h2>
+      &lt;link rel="stylesheet" href="mystyle.css"&gt;
+
+      <h2>2.Internal CSS: in Head section</h2>
+      &lt;style&gt;
+      <pre>
+        .p{
+            color:red;
+        }
+
+        .myClass{
+            color:green;
+        }
+
+        #myId{
+            color:yellow;
+        }
+      </pre>
+      &lt;/style&gt;
+
+      <h2>3.inline CSS : in Head section</h2>
+      &lt;p style="color:red;"&gt;Hello &lt;/p&gt;
+    </div>
+
+    <h2>IMP NOTE: Cascading Order</h2>
+    <p>
+      What style will be used when there is more than one style specified for an
+      HTML element?
+    </p>
+    <div>
+      All the styles in a page will "cascade" into a new "virtual" style sheet
+      by the following rules, where number one has the highest priority:
+      <ol>
+        <li>Inline style (inside an HTML element)</li>
+        <li>External and internal style sheets (in the head section)</li>
+        <li>Browser default</li>
+      </ol>
+    </div>
+
+    <br />
+    <br />
+    <br />
+    <h2>NOTE:</h2>
+    <ol>
+      <li>
+        <span style="font-weight: 600"> Multiple Style Sheets:</span> If some
+        properties have been defined for the same selector (element) in
+        different style sheets, the value from the last read style sheet will be
+        used.
+      </li>
+    </ol>
+    <br />
+    <br />
+    <br />
+    <br />
+    <h1>CSS Comments</h1>
+    <div>/* This is a single-line comment */</div>
+    <div>
+      <pre>
+ /* This is
+a multi-line
+comment */
+        </pre
+      >
+    </div>
+  </body>
+</html>

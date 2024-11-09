@@ -1,0 +1,14 @@
+✔️  ❤️ 
+
+❤️JS block Scope {}
+✔️var outside block goes under GEC
+{
+    ✔️var inside block also goes under GEC
+}
+
+✔️so name confilct variable already declared is same name variable in and out
+✔️ But in case of function var inside function goes under local scope and var out side fun goes undef GEC
+
+
+
+

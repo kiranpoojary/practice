@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @keyframes example1 {
+        from {
+          background-color: red;
+        }
+        to {
+          background-color: yellow;
+        }
+      }
+      #div1 {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        animation-name: example1;
+        animation-duration: 4s;
+      }
+
+      @keyframes example2 {
+        0% {
+          background-color: red;
+        }
+        25% {
+          background-color: yellow;
+        }
+        50% {
+          background-color: blue;
+        }
+        100% {
+          background-color: green;
+        }
+      }
+      #div2 {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        animation-name: example2;
+        animation-duration: 4s;
+      }
+
+      @keyframes example3 {
+        0% {
+          background-color: red;
+          left: 0px;
+          top: 0px;
+        }
+        25% {
+          background-color: yellow;
+          left: 200px;
+          top: 0px;
+        }
+        50% {
+          background-color: blue;
+          left: 200px;
+          top: 200px;
+        }
+        75% {
+          background-color: green;
+          left: 0px;
+          top: 200px;
+        }
+        100% {
+          background-color: red;
+          left: 0px;
+          top: 0px;
+        }
+      }
+
+      #div3 {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        position: relative;
+        animation-name: example3;
+        animation-duration: 4s;
+      }
+
+      @keyframes example4 {
+        0% {
+          background-color: red;
+          left: 0px;
+          top: 0px;
+        }
+        25% {
+          background-color: yellow;
+          left: 200px;
+          top: 0px;
+        }
+        50% {
+          background-color: blue;
+          left: 200px;
+          top: 200px;
+        }
+        75% {
+          background-color: green;
+          left: 0px;
+          top: 200px;
+        }
+        100% {
+          background-color: red;
+          left: 0px;
+          top: 0px;
+        }
+      }
+      #div4 {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        position: relative;
+        animation-name: example4;
+        animation-duration: 4s;
+        animation-delay: 2s;
+      }
+
+      @keyframes example5 {
+        0% {
+          background-color: red;
+          left: 0px;
+          top: 0px;
+        }
+        25% {
+          background-color: yellow;
+          left: 200px;
+          top: 0px;
+        }
+        50% {
+          background-color: blue;
+          left: 200px;
+          top: 200px;
+        }
+        75% {
+          background-color: green;
+          left: 0px;
+          top: 200px;
+        }
+        100% {
+          background-color: red;
+          left: 0px;
+          top: 0px;
+        }
+      }
+      #div5 {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        position: relative;
+        animation-name: example5;
+        animation-duration: 4s;
+        animation-iteration-count: 3;
+      }
+
+      @keyframes revvvvv {
+        0% {
+          background-color: red;
+          left: 0px;
+          top: 0px;
+        }
+        25% {
+          background-color: yellow;
+          left: 200px;
+          top: 0px;
+        }
+        50% {
+          background-color: blue;
+          left: 200px;
+          top: 200px;
+        }
+        75% {
+          background-color: green;
+          left: 0px;
+          top: 200px;
+        }
+        100% {
+          background-color: red;
+          left: 0px;
+          top: 0px;
+        }
+      }
+      #rev {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        position: relative;
+        animation-name: revvvvv;
+        animation-duration: 4s;
+        animation-direction: reverse;
+      }
+
+      @keyframes alternateeee {
+        0% {
+          background-color: red;
+          left: 0px;
+          top: 0px;
+        }
+        25% {
+          background-color: yellow;
+          left: 200px;
+          top: 0px;
+        }
+        50% {
+          background-color: blue;
+          left: 200px;
+          top: 200px;
+        }
+        75% {
+          background-color: green;
+          left: 0px;
+          top: 200px;
+        }
+        100% {
+          background-color: red;
+          left: 0px;
+          top: 0px;
+        }
+      }
+      #alt {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        position: relative;
+        animation-name: alternateeee;
+        animation-duration: 4s;
+        animation-iteration-count: 2;
+        animation-direction: alternate;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>CSS Animations</h1>
+      <p>CSS allows animation of HTML elements without using JavaScript!</p>
+      <p>In this chapter you will learn about the following properties:</p>
+      <ol>
+        <li>@keyframes</li>
+        <li>animation-name</li>
+        <li>animation-duration</li>
+        <li>animation-delay</li>
+        <li>animation-iteration-count</li>
+        <li>animation-direction</li>
+        <li>animation-timing-function</li>
+        <li>animation-fill-mode</li>
+        <li>animation</li>
+      </ol>
+    </div>
+    <div>
+      <h1>What are CSS Animations?</h1>
+      <p>
+        An animation lets an element gradually change from one style to
+        another.You can change as many CSS properties you want, as many times as
+        you want.
+      </p>
+      <p>
+        To use CSS animation, you must first specify some keyframes for the
+        animation.Keyframes hold what styles the element will have at certain
+        times.
+      </p>
+      <h1>The @keyframes Rule</h1>
+      <p>
+        When you specify CSS styles inside the @keyframes rule, the animation
+        will gradually change from the current style to the new style at certain
+        times.
+      </p>
+      <p>
+        To get an animation to work, you must bind the animation to an element.
+      </p>
+
+      <p>
+        The following example binds the "example" animation to the div element.
+        The animation will last for 4 seconds, and it will gradually change the
+        background-color of the div element from "red" to "yellow":
+      </p>
+      <div id="div1"></div>
+
+      <p>
+        <b>Note:</b> When an animation is finished, it goes back to its original
+        style.
+      </p>
+
+      <p>
+        The following example will change the background-color of the div
+        element when the animation is 25% complete, 50% complete, and again when
+        the animation is 100% complete:
+      </p>
+      <div id="div2"></div>
+
+      <p>
+        Note: When an animation is finished, it goes back to its original style.
+      </p>
+    </div>
+
+    <div>
+      <p>
+        The following example will change both the background-color and the
+        position of the div element when the animation is 25% complete, 50%
+        complete, and again when the animation is 100% complete:
+      </p>
+      <div id="div3"></div>
+      <p>
+        <b>Note:</b> When an animation is finished, it goes back to its original
+        style.
+      </p>
+    </div>
+    <div>
+      <h1>Delay an Animation</h1>
+      <p>
+        The animation-delay property specifies a delay for the start of an
+        animation.
+      </p>
+
+      <p>
+        The animation-delay property specifies a delay for the start of an
+        animation. The following example has a 2 seconds delay before starting
+        the animation:
+      </p>
+      <div id="div4"></div>
+    </div>
+
+    <div>
+      <h1>Set How Many Times an Animation Should Run</h1>
+      <p>
+        The animation-iteration-count property specifies the number of times an
+        animation should run.
+      </p>
+      <div id="div5"></div>
+    </div>
+    <div>
+      <h1>Run Animation in Reverse Direction or Alternate Cycles</h1>
+      <p>
+        The animation-direction property specifies whether an animation should
+        be played forwards, backwards or in alternate cycles.
+      </p>
+      <p>The animation-direction property can have the following values:</p>
+      <li>
+        normal - The animation is played as normal (forwards). This is default
+      </li>
+      <li>
+        reverse - The animation is played in reverse direction (backwards)
+      </li>
+      <li>
+        alternate - The animation is played forwards first, then backwards
+      </li>
+      <li>
+        alternate-reverse - The animation is played backwards first, then
+        forwards
+      </li>
+      <h1>REVERSE</h1>
+      <div id="rev"></div>
+      <h1>ALTERNATE</h1>
+      <div id="alt"></div>
+    </div>
+
+    <div>
+      <h1>Specify the Speed Curve of the Animation</h1>
+      <li>
+        ease - Specifies an animation with a slow start, then fast, then end
+        slowly (this is default)
+      </li>
+      <li>
+        linear - Specifies an animation with the same speed from start to end
+      </li>
+      <li>ease-in - Specifies an animation with a slow start</li>
+      <li>ease-out - Specifies an animation with a slow end</li>
+      <li>ease-in-out - Specifies an animation with a slow start and end</li>
+      <li>
+        cubic-bezier(n,n,n,n) - Lets you define your own values in a
+        cubic-bezier function
+      </li>
+    </div>
+    <div>
+      <h2>PENDING PROPERTY</h2>
+      <ol>
+        <li>Specify the fill-mode For an Animation</li>
+        <li>Animation Shorthand Property</li>
+      </ol>
+    </div>
+  </body>
+</html>

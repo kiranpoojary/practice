@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // ________________________________________________________
+      // console.log(a);
+      // var a;
+      // ________________________________________________________
+      // console.log(a);
+      // let a;
+      // ________________________________________________________
+      // console.log(a);
+      // {
+      //   var a = 100;
+      // }
+      // console.log(a);
+      // ________________________________________________________
+      // console.log(a);
+      // {
+      //   let a = 100;
+      // }
+      // console.log(a);
+      // ________________________________________________________
+      // var a = 100;
+      // (function () {
+      //   var a = (b = 10);
+      // })();
+      // console.log({ a });
+      // console.log({ b });
+      // ________________________________________________________
+      // {
+      //   let a = 100; //check in which scope/context memory is created
+      // }
+      // ________________________________________________________
+      // {
+      //   var a = 100; //check in which scope/context memory is created
+      // }
+      // ________________________________________________________
+      // console.log(a);
+      // console.log(b);
+      // {
+      //   var a = 100;
+      //   {
+      //     var b = 200;
+      //     let a = 5;
+      //     console.log(a);
+      //   }
+      //   console.log(a);
+      //   console.log(b);
+      // }
+      // ________________________________________________________
+      // console.log(a);
+      // console.log(b);
+      // {
+      //   var a = 100;
+      //   {
+      //     var b = 200;
+      //     console.log(a);
+      //     let a = 5;
+      //   }
+      //   console.log(a);
+      //   console.log(b);
+      // }
+      // ________________________________________________________
+      // console.log(a);
+      // console.log(b);
+      // let a = 100;
+      // const b = 100;
+      // console.log(a);
+      // console.log(b);
+      // ________________________________________________________
+      // var a = 200;
+      // {
+      //   console.log({ a });
+      //   let a = 300;
+      //   console.log({ a });
+      // }
+      // console.log({ a });
+      // ________________________________________________________
+      // var a = 100;
+      // {
+      //   console.log({ a });
+      //   var a = (b = 200);
+      //   console.log({ a, b });
+      // }
+      // console.log({ a, b });
+      // ________________________________________________________
+      // var a = 100;
+      // {
+      //   console.log({ a, b });
+      //   var a = (b = 200);
+      //   console.log({ a, b });
+      // }
+      // console.log({ a, b });
+      // ________________________________________________________
+      // console.log({ a, b });
+      // var a = (b = 300);
+      // console.log({ a, b });
+      // ________________________________________________________
+      // console.log({ a });
+      // console.log({ b });
+      // var a = (b = 300);
+      // console.log({ a, b });
+      // ________________________________________________________
+      //Does it created block scope
+      // var a = 200;
+      // {
+      //   console.log({ a });
+      //   var a = 300;
+      //   console.log({ a });
+      // }
+      // console.log({ a });
+      // ________________________________________________________
+      // var a = 100;
+      // var b = a++;
+      // console.log({ a, b });
+      // ________________________________________________________
+      // const a = 100;
+      // console.log(a++);
+      // ________________________________________________________
+      // ________________________________________________________
+      // ________________________________________________________
+      // ________________________________________________________
+      // ________________________________________________________
+      // ________________________________________________________
+      // ________________________________________________________
+      // ________________________________________________________
+      // ________________________________________________________
+      // ________________________________________________________
+      // ________________________________________________________
+      // ________________________________________________________
+      // ________________________________________________________
+      // ________________________________________________________
+      // ________________________________________________________
+      // ________________________________________________________
+      // ________________________________________________________
+      // ________________________________________________________
+
+      // function varScoping() {
+      //   var a = 1;
+      //   if (true) {
+      //     var a = 2;
+      //     console.log(a);
+      //     console.log(b);
+      //     {
+      //       var b = 3;
+      //       console.log(b);
+      //     }
+      //     console.log(b);
+      //   }
+      //   console.log(b);
+      //   console.log(a);
+      // }
+      // varScoping();
+      // ________________________________________________________
+      // function letScoping() {
+      //   let a = 1;
+      //   if (true) {
+      //     let a = 2;
+      //     console.log(a);
+      //   }
+      //   console.log(a);
+      // }
+      // letScoping();
+      // ________________________________________________________
+      // var a = 100;
+      // function getA() {
+      //   var a = 200;
+      //   console.log(a, this.a);
+      // }
+      // getA();
+      // ________________________________________________________
+      // let a = 100;
+      // function getA() {
+      //   let a = 200;
+      //   console.log(a, this.a); //how to log outside a variable eben if local has a variable
+      // }
+      // getA();
+      // ________________________________________________________
+      // console.log(this === window);
+      // ________________________________________________________
+      // console.log("hello world");
+      // let a = 100;
+      // let a = 200;
+      // ________________________________________________________
+      // function getA() {
+      //   var a = 100;
+      //   if (a > 200) {
+      //     var b = 200;
+      //   }
+      //   console.log(a, b);
+      // }
+      // getA();
+      // ________________________________________________________
+      // function getA() {
+      //   var a = 100;
+      //   if (a < 200) {
+      //     var b = 200;
+      //   }
+      //   console.log(a, b);
+      // }
+      // getA();
+      // ________________________________________________________
+      // function getA() {
+      //   var a = 100;
+      //   {
+      //     var b = 200;
+      //   }
+      //   console.log(a, b);
+      // }
+      // getA();
+      // ________________________________________________________
+      // function getValue() {
+      //   var a = (b = 5);
+      //   c = 300;
+      //   console.log(a, b, c);
+      // }
+      // getValue();
+      // console.log(c);
+      // console.log(b);
+      // console.log(a);
+      // ________________________________________________________
+      // function factorial(n) {
+      //   if (n === 0 || n === 1) {
+      //     return 1;
+      //   } else {
+      //     return n * factorial(n - 1);
+      //   }
+      // }
+      // let num1 = 6;
+      // let result = factorial(num1);
+      // console.log("The factorial of given number is :" + result);
+      // ________________________________________________________
+      // function fact(n) {
+      //   function f() {
+      //     if (n == 0 || n == 1) return 1;
+      //     else return n * fact(n - 1);
+      //   }
+      //   return f();
+      // }
+      // console.log(fact(4));
+      // ________________________________________________________
+      // function timeOut(t) {
+      //   function tOut(t) {
+      //     setTimeout(() => {
+      //       console.log(t);
+      //     }, t * 1000);
+      //   }
+      //   tOut(t);
+      // }
+      // for (var ele of [1, 4, 12, 15]) {
+      //   timeOut(ele);
+      // }
+      // ________________________________________________________ JIT Compilation
+      // console.log("hello");
+      // const a;
+      // ________________________________________________________ JIT Compilation
+      // console.log("hello");
+      // const a = 100;
+      // a = 200;
+      // ________________________________________________________ JIT Compilation
+      // Array.prototype.sums = function () {
+      //   return this?.reduce((sum, cur) => sum + cur, 0);
+      // };
+      // console.log([1, 2, 3, 4, 5, 6].sums());
+      // ________________________________________________________
+      // var a_numbers = [1, 2, 3, 4, 5];
+      // function numSum(nums) {
+      //   const sum = nums?.reduce(function findSum(sum, cur) {
+      //     return sum + cur;
+      //   });
+      //   return sum;
+      // }
+      // numSum(a_numbers);
+      // ________________________________________________________ sqr in script scope
+      // let a = 5;
+      // while (a > 0) {
+      //   let sqr = a ** 2;
+      //   console.log(sqr);
+      //   --a;
+      // }
+      // ________________________________________________________
+      //BEST EXAMPLES CLOSURE
+      // function generateBill(fruit, qty) {
+      //   const stock = {
+      //     apple: { price: 180, gst: 18 },
+      //     grapes: { price: 140, gst: 9 },
+      //     banana: { price: 80, gst: 9 },
+      //   };
+      //   function getBillAmount() {
+      //     return stock[fruit]?.price * qty + getGstAmount();
+      //   }
+      //   function getGstAmount() {
+      //     return (stock[fruit]?.price * qty * stock[fruit]?.gst) / 100;
+      //   }
+      //   return getBillAmount;
+      // }
+      // let getBillAmount = generateBill("apple", 1);
+      // console.log("BillAmount :", getBillAmount());
+      // ________________________________________________________
+      //BEST EXAMPLES CLOSURE
+      // function pageVisitCount() {
+      //   var count = 0;
+      //   function incr() {
+      //     count = ++count;
+      //     return count;
+      //   }
+      //   return incr;
+      // }
+
+      // const visitIncrement = pageVisitCount();
+      // console.log(visitIncrement());
+      // console.log(visitIncrement());
+      // console.log(visitIncrement());
+      // ________________________________________________________
+
+      // function getResult() {
+      //   console.log("Function Declaration Executed....");
+      // }
+
+      // var getResult = function () {
+      //   console.log("Function Expression Executed....");
+      // };
+      // getResult();
+
+      // ________________________________________________________
+      // function getResult() {
+      //   console.log("Function Declaration Executed....");
+      // }
+      // getResult();
+
+      // var getResult = function () {
+      //   console.log("Function Expression Executed....");
+      // };
+      // getResult();
+      // ________________________________________________________
+      // function getResult() {
+      //   console.log("Function Declaration Executed....");
+      // }
+
+      // const getResult = function () {
+      //   console.log("Function Expression Executed....");
+      // };
+      // getResult();
+      // ________________________________________________________
+      // function getResult() {
+      //   console.log("Function Declaration Executed....");
+      // }
+
+      // let getResult = function () {
+      //   console.log("Function Expression Executed....");
+      // };
+      // getResult();
+      // ________________________________________________________
+
+      // ________________________________________________________
+      // ________________________________________________________
+      // ________________________________________________________
+      // ________________________________________________________
+      // ________________________________________________________
+      // ________________________________________________________
+      // ________________________________________________________
+      // ________________________________________________________
+      // ________________________________________________________
+      // ________________________________________________________
+      // ________________________________________________________
+      // ________________________________________________________
+      // ________________________________________________________
+      // ________________________________________________________
+      // ________________________________________________________
+      // ________________________________________________________
+      // ________________________________________________________
+      // ________________________________________________________
+    </script>
+  </head>
+  <body>
+    Hello JS
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <h1>Order of Styling Priority</h1>
+      <ol>
+        <li>
+          Inline styles (not selectors but directly added to elements) have the
+          highest specificity
+        </li>
+        <li>IDs (#id) have a high specificity.</li>
+        <li>
+          Classes (.class), attributes ([attribute]), and pseudo-classes
+          (:hover, :nth-child) have medium specificity.
+        </li>
+        <li>
+          Elements (element) and pseudo-elements (::before, ::after) have low
+          specificity
+        </li>
+      </ol>
+    </div>
+  </body>
+</html>

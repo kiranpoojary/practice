@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box1 {
+        width: 300px;
+        height: 100px;
+        padding: 15px;
+        background-color: coral;
+        box-shadow: 10px 10px;
+      }
+      .box2 {
+        width: 300px;
+        height: 100px;
+        padding: 15px;
+        background-color: coral;
+        box-shadow: 10px 10px lightblue;
+      }
+      .box3 {
+        width: 300px;
+        height: 100px;
+        padding: 15px;
+        background-color: coral;
+        box-shadow: 10px 10px 5px lightblue;
+      }
+
+      .box4 {
+        width: 300px;
+        height: 100px;
+        padding: 15px;
+        background-color: coral;
+        box-shadow: 10px 10px 5px 12px lightblue;
+      }
+
+      .box5 {
+        width: 300px;
+        height: 100px;
+        padding: 15px;
+        background-color: coral;
+        box-shadow: 10px 10px 5px lightblue inset;
+      }
+
+      #example1 {
+        border: 1px solid;
+        padding: 10px;
+        box-shadow: 5px 5px blue, 10px 10px red, 15px 15px green;
+        margin: 20px;
+      }
+
+      #example2 {
+        border: 1px solid;
+        padding: 10px;
+        box-shadow: 5px 5px 8px blue, 10px 10px 8px red, 15px 15px 8px green;
+        margin: 20px;
+      }
+
+      div.card {
+        width: 250px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        text-align: center;
+      }
+
+      div.header {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px;
+        font-size: 40px;
+      }
+
+      div.container {
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>CSS Shadow Effects</h1>
+      <p>With CSS you can add shadow to text and to elements.</p>
+      <div>
+        In these chapters you will learn about the following properties:
+        <li>text-shadow</li>
+        <li>box-shadow</li>
+      </div>
+      <h1>CSS Text Shadow</h1>
+      <h3>The CSS text-shadow property applies shadow to text.</h3>
+      <h1 style="text-shadow: 2px 2px">Sample Shadow</h1>
+      <h1 style="text-shadow: 2px 2px red">Sample Shadow with Color</h1>
+      <h1 style="text-shadow: 2px 2px 5px red">
+        Sample Shadow with blur and color
+      </h1>
+      <h1 style="color: white; text-shadow: 2px 2px 4px #000000">
+        white text with black shadow
+      </h1>
+      <h1>Multiple Shadows</h1>
+      <h1 style="text-shadow: 0 0 3px #ff0000, 0 0 5px #0000ff">
+        red and blue neon glow shadow
+      </h1>
+      <h1
+        style="
+          color: white;
+          text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+        "
+      >
+        white text with black, blue, and darkblue shadow
+      </h1>
+
+      <h1>CSS Box Shadow; CSS Box Shadow; CSS Box Shadow; CSS Box Shadow;</h1>
+
+      <div class="box1">This is a div element with a box-shadow</div>
+
+      <h1>Specify a Color for the Shadow</h1>
+      <p>The color parameter defines the color of the shadow.</p>
+      <div class="box2">A div element with a lightblue box-shadow</div>
+    </div>
+
+    <h1>The box-shadow Property</h1>
+    <div class="box3">
+      A div element with a 5px blurred, lightblue box-shadow.
+    </div>
+
+    <h1>Set the Spread Radius of the Shadow</h1>
+    <p>
+      The spread parameter defines the spread radius. A positive value increases
+      the size of the shadow, a negative value decreases the size of the shadow.
+    </p>
+    <div class="box4"></div>
+
+    <h1>Set the inset Parameter</h1>
+    <p>
+      The inset parameter changes the shadow from an outer shadow (outset) to an
+      inner shadow.
+    </p>
+    <div class="box5">
+      A div element with a blurred, lightblue, inset box-shadow.
+    </div>
+
+    <h1>Add Multiple Shadows</h1>
+    <p>An element can also have multiple shadows:</p>
+
+    <div id="example1">
+      <h2>Multiple shadows</h2>
+      <p>box-shadow: 5px 5px blue, 10px 10px red, 15px 15px green:</p>
+    </div>
+    <br />
+
+    <div id="example2">
+      <h2>Multiple shadows with blur effect</h2>
+      <p>
+        box-shadow: 5px 5px 8px blue, 10px 10px 8px red, 15px 15px 8px green:
+      </p>
+    </div>
+    <h1>Cards</h1>
+    <p>You can also use the box-shadow property to create paper-like cards:</p>
+
+    <h1>Create Cards</h1>
+
+    <p>The box-shadow property can be used to create paper-like cards:</p>
+
+    <div class="card">
+      <div class="header">
+        <h1>1</h1>
+      </div>
+
+      <div class="container">
+        <p>January 1, 2021</p>
+      </div>
+    </div>
+    <br />
+    <br />
+  </body>
+</html>

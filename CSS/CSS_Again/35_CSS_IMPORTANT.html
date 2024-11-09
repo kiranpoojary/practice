@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #myid {
+        background-color: blue;
+      }
+
+      .myclass {
+        background-color: gray;
+      }
+
+      p {
+        background-color: red !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>What is !important?</h1>
+      <div>
+        The !important rule in CSS is used to add more importance to a
+        property/value than normal.
+      </div>
+      <div>
+        In fact, if you use the !important rule, it will override ALL previous
+        styling rules for that specific property on that element!
+      </div>
+      <h2>Example</h2>
+
+      <p>This is some text in a paragraph.</p>
+
+      <p class="myclass">This is some text in a paragraph.</p>
+
+      <p id="myid">This is some text in a paragraph.</p>
+
+      <div>
+        In the above paragraph with class, id, and nothing has different
+        background color but still all 3 show red background because the tag
+        selectpr(p) set as important
+      </div>
+    </div>
+  </body>
+</html>

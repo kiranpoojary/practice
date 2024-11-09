@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #borderimg1 {
+        border: 10px solid transparent;
+        padding: 15px;
+        border-image: url(image-1.png) 30 round;
+      }
+      #borderimg2 {
+        border: 10px solid transparent;
+        padding: 15px;
+        border-image: url(image-1.png) 30 stretch;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>CSS border-image</h1>
+      <p>
+        With the CSS border-image property, you can set an image to be used as
+        the
+        <span style="font-weight: 800; background-color: bisque">
+          border around an element.
+        </span>
+      </p>
+      <h2>CSS border-image Property</h2>
+      <p>
+        The CSS border-image property allows you to specify an image to be used
+        instead of the normal border around an element.
+      </p>
+      <div>The property has three parts:</div>
+      <li>The image to use as the border</li>
+      <li>Where to slice the image</li>
+      <li>
+        Define whether the middle sections should be repeated or stretched
+      </li>
+      <pre>
+        The border-image property takes the image and slices it into nine sections, like a tic-tac-toe board. It then places the corners at the corners, and the middle sections are repeated or stretched as you specify.
+
+        Note: For border-image to work, the element also needs the border property set!
+      </pre>
+
+      <h1>The border-image Example</h1>
+
+      <p>Here is the original image:</p>
+      <img src="image-1.png" width="100" height="100" />
+
+      <p>
+        Here, the middle sections of the image are repeated to create the
+        border:
+      </p>
+      <p id="borderimg1">border-image: url(border.png) 30 round;</p>
+
+      <p>
+        Here, the middle sections of the image are stretched to create the
+        border:
+      </p>
+      <p id="borderimg2">border-image: url(border.png) 30 stretch;</p>
+
+      <p>
+        <strong>Note:</strong> Internet Explorer 10, and earlier versions, do
+        not support the border-image property.
+      </p>
+    </div>
+  </body>
+</html>
