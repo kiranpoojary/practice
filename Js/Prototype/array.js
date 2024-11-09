@@ -9,8 +9,12 @@ const emp = [
   { name: "Archana", salary: 35000 },
   { name: "Lakshmi", salary: 25000 },
 ];
-// ***************************************************************************
-//create map equalent array prototype with name myMap
+// *******
+// ***********************************************************************************************
+// *******
+console.log(
+  "\n\n------create map equalent array prototype with name myMap------"
+);
 Array.prototype.myMap = function (cb) {
   const result = [];
   for (let i = 0; i < this.length; i++) {
@@ -35,7 +39,9 @@ console.log({ empResult });
 // *******
 // ***********************************************************************************************
 // *******
-//create filter equalent array prototype with name myFilter
+console.log(
+  "\n\n------create filter equalent array prototype with name myFilter------"
+);
 Array.prototype.myFilter = function (cb) {
   const result = [];
   for (let i = 0; i < this.length; i++) {
@@ -57,7 +63,10 @@ console.log({ empResult2 });
 // *******
 // ***********************************************************************************************
 // *******
-//create filter equalent array prototype with name myReduce
+console.log(
+  "\n\n------create reduce equalent array prototype with name myReduce------"
+);
+
 Array.prototype.myReduce = function (cb, initialValue) {
   const result = initialValue;
   for (let i = 0; i < this.length; i++) {
@@ -90,7 +99,10 @@ console.log(empResult3);
 // *******
 // ***********************************************************************************************
 // *******
-//create forEach equalent array prototype with name myForEach
+
+console.log(
+  "\n\n------create forEach equalent array prototype with name myForEach------"
+);
 Array.prototype.myForEach = function (cb) {
   for (let i = 0; i < this.length; i++) {
     cb(this[i], i, this);
