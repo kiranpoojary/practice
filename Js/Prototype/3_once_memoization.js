@@ -1,4 +1,5 @@
 //ONCE: make function can invoke once only
+//memoize: create cache(return output if already calculated for same input)
 
 console.log(
   "\n************************************** ONCE *****************************************"

@@ -1,83 +1,57 @@
-console.log(
-  "\n************************************** Promise *****************************************"
-);
-
-//Way - 1
-function MyPromise(executor) {
+function myPromise(executor) {
+  let value;
+  let error;
   let onResolve;
   let onReject;
   let isFulfilled = false;
   let isRejected = false;
   let isCalled = false;
-  let value;
 
-  function resolve(val) {
-    isFulfilled = true; // Set to true, once the promise is resolved
-    value = val; //Resolved value is now assigned
-    // For asynchronous executor function only
-    // Callback value is assigned to onResolve only when promise is not yet resolved
-    if (typeof onResolve === "function") {
-      onResolve(val);
-      isCalled = true; // Set to true when the function is called
-    }
-  }
-
-  function reject(val) {
-    isRejected = true; // Set to true, once the promise is resolved
-    value = val; //Rejected value is now assigned
-    // For asynchronous executor function only
-    // Callback value is assigned to onReject only when promise is not yet rejected
-    if (typeof onReject === "function") {
-      onReject(val);
-      isCalled = true; // Set to true when the function is called
-    }
-  }
-
-  this.then = function (callback) {
-    onResolve = callback;
-    // Only for synchronous executor operation
-    if (isFulfilled && !isCalled) {
-      isCalled = true;
+  function resolve(result) {
+    isFulfilled = true;
+    value = result;
+    if (typeof onResolve == "function" && !isCalled) {
       onResolve(value);
-    }
-    return this;
-  };
-
-  this.catch = function (callback) {
-    onReject = callback;
-    // Only for synchronous executor operation
-    if (isRejected && !isCalled) {
       isCalled = true;
-      onReject(value);
+    }
+  }
+
+  function reject(err) {
+    isRejected = true;
+    error = err;
+    if (typeof onReject == "function" && !isCalled) {
+      onReject(error);
+      isCalled = true;
+    }
+  }
+
+  this.then = function (thenHandler) {
+    onResolve = thenHandler;
+    if (!isCalled && isFulfilled) {
+      onResolve(value);
+      isCalled = true;
     }
     return this;
   };
 
-  try {
-    executor(resolve, reject);
-  } catch (err) {
-    reject(err);
-  }
+  this.catch = function (catchHandler) {
+    onReject = catchHandler;
+    if (!isCalled && isRejected) {
+      onReject(error);
+      isCalled = true;
+    }
+    return this;
+  };
+
+  executor(resolve, reject);
 }
 
-const promiseObj = new MyPromise((resolve, reject) => {
+const wish = new myPromise((resolve, reject) => {
   setTimeout(() => {
-    resolve({ msg: "OK" });
-    // reject({ msg: null });
-  }, 2000);
+    resolve(`Hi`);
+  }, 1000);
 });
-promiseObj
-  .then((result) => {
-    console.log(result);
-  })
-  .catch((err) => {
-    console.log(err);
-  });
 
-// const aa = new Promise((resolve, reject) => {
-//   setTimeout(() => {
-//     resolve(100);
-//   }, 2000);
-// });
-
-// aa.then((val) => console.log({ val }));
+wish.then((res) => {
+  console.log(res);
+});
