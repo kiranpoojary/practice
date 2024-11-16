@@ -18,7 +18,9 @@ let arr2 = [
   [399, 44],
 ];
 let arr3 = [[0], [0]];
+let arr4 = [];
 
 console.log(findLargestElement(arr));
 console.log(findLargestElement(arr2));
 console.log(findLargestElement(arr3));
+console.log(findLargestElement(arr4));
