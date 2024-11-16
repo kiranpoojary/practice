@@ -15,4 +15,7 @@ Array.prototype.myFlat = function (maxLevel = 1) {
   return flat(this, maxLevel);
 };
 
-console.log(flat(arr1, 2));
+console.log(JSON.stringify(arr1));
+console.log(arr1.myFlat());
+console.log(arr1.myFlat(2));
+console.log(arr1.myFlat(Infinity));
