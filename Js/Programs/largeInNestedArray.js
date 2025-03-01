@@ -1,4 +1,4 @@
-function findLargestElement(nestedArray, largest) {
+function findLargestElement(nestedArray, largest = null) {
   if (nestedArray.length == 0) return largest;
   for (const element of nestedArray) {
     if (Array.isArray(element)) {

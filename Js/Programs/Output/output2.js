@@ -9,8 +9,8 @@ greet()();
 let g = greet();
 g();
 
-// (function name(params) {
-//   console.log(3000)
+// (function name() {
+//   console.log(3000);
 // })();
 
-// name()
+// name();

@@ -1,7 +1,7 @@
-function MyPromise(myFn) {
+function MyPromise(fn) {
   let value;
   let error;
-  let fulfilled = false;
+  let fulFilled = false;
   let rejected = false;
   let called = false;
   let onResolve;
@@ -10,66 +10,61 @@ function MyPromise(myFn) {
 
   function resolve(val) {
     value = val;
-    fulfilled = true;
-    if (!called && typeof onResolve == "function") {
+    fulFilled = true;
+    if (typeof onResolve == "function" && !called) {
       called = true;
       onResolve(value);
-      if (onFinally) onFinally();
+      onFinally();
     }
   }
 
   function reject(err) {
     error = err;
     rejected = true;
-    if (!called && typeof onReject == "function") {
+    if (typeof onReject == "function" && !called) {
       called = true;
       onReject(error);
-      if (onFinally) onFinally();
+      onFinally();
     }
   }
 
-  this.then = function (thenFn) {
-    onResolve = thenFn;
-    if (!called && fulfilled) {
+  this.then = function (thenCB) {
+    onResolve = thenCB;
+    if (!called && fulFilled) {
       called = true;
-      thenFn(value);
-      if (onFinally) onFinally();
+      thenCB(value);
     }
     return this;
   };
 
-  this.catch = function (catchFn) {
-    onReject = catchFn;
+  this.catch = function (catchCB) {
+    onReject = catchCB;
     if (!called && rejected) {
       called = true;
-      onReject(error);
-      if (onFinally) onFinally();
+      catchCB(error);
     }
     return this;
   };
 
-  this.finally = function (finallyFn) {
-    onFinally = finallyFn;
+  this.finally = function (finallyCB) {
+    onFinally = finallyCB;
     if (called) {
       onFinally();
+      onFinally = null;
     }
-    return this;
   };
-
-  myFn(resolve, reject);
+  fn(resolve, reject);
 }
 
-const wish = new MyPromise((resolve, reject) => {
+const aa = new MyPromise((resolve, reject) => {
   setTimeout(() => {
-    reject("Hi");
+    resolve({ message: "OK" });
+    // reject({ message: "Error" });
   }, 1000);
 });
 
-wish
-  .then((res) => {
-    console.log(`Then    : ${res}`);
-  })
-  .catch((err) => console.log(`Catch    : ${err}`))
+aa.then((data) => console.log(data))
+  .catch((err) => console.log(err))
   .finally(() => {
-    console.log(`Finaly.......`);
+    console.log("ended.....");
   });
