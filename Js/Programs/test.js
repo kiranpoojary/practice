@@ -1,47 +1,47 @@
-function MyPromise(fn) {
+function MyPromise(cb) {
   let value;
   let error;
-  let fulFilled = false;
-  let rejected = false;
-  let called = false;
   let onResolve;
   let onReject;
+  let isResolved = false;
+  let isRejected = false;
+  let called = false;
   let onFinally;
 
   function resolve(val) {
+    isResolved = true;
     value = val;
-    fulFilled = true;
     if (typeof onResolve == "function" && !called) {
-      called = true;
       onResolve(value);
-      onFinally();
+      called = true;
+      if (onFinally) onFinally();
     }
   }
 
   function reject(err) {
+    isRejected = true;
     error = err;
-    rejected = true;
     if (typeof onReject == "function" && !called) {
-      called = true;
       onReject(error);
-      onFinally();
+      called = true;
+      if (onFinally) onFinally();
     }
   }
 
   this.then = function (thenCB) {
     onResolve = thenCB;
-    if (!called && fulFilled) {
-      called = true;
+    if (isResolved && !called) {
       thenCB(value);
+      called = true;
     }
     return this;
   };
 
   this.catch = function (catchCB) {
     onReject = catchCB;
-    if (!called && rejected) {
-      called = true;
+    if (isRejected && !called) {
       catchCB(error);
+      called = true;
     }
     return this;
   };
@@ -50,21 +50,35 @@ function MyPromise(fn) {
     onFinally = finallyCB;
     if (called) {
       onFinally();
-      onFinally = null;
     }
+    return this;
   };
-  fn(resolve, reject);
+
+  cb(resolve, reject);
 }
 
-const aa = new MyPromise((resolve, reject) => {
-  setTimeout(() => {
-    resolve({ message: "OK" });
-    // reject({ message: "Error" });
-  }, 1000);
+const a = new MyPromise((resolve, reject) => {
+  // setTimeout(() => {
+  resolve(200);
+  // reject(500);
+  // }, 1000);
 });
 
-aa.then((data) => console.log(data))
-  .catch((err) => console.log(err))
+a.then((res) => console.log({ res }))
+  .catch((err) => console.log({ err }))
   .finally(() => {
-    console.log("ended.....");
+    console.log("DONE....");
   });
+
+// const a = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     resolve(200);
+//     // reject(500);
+//   }, 500);
+// });
+
+// a.then((res) => console.log({ res }))
+//   .catch((err) => console.log({ err }))
+//   .finally(() => {
+//     console.log("DONE....");
+//   });

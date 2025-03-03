@@ -33,7 +33,6 @@ function MyPromise(myFn) {
     if (!called && fulfilled) {
       called = true;
       thenFn(value);
-      if (onFinally) onFinally();
     }
     return this;
   };
@@ -43,7 +42,6 @@ function MyPromise(myFn) {
     if (!called && rejected) {
       called = true;
       onReject(error);
-      if (onFinally) onFinally();
     }
     return this;
   };

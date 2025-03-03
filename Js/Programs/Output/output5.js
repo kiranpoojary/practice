@@ -21,6 +21,7 @@ aa.then((res) => {
   })
   .finally(() => {
     console.log("ffff22");
+    return "lolooooooooooooo";
   })
   .catch((eew) => console.log("eew " + eew))
   .then((qq) => console.log({ qq }));
