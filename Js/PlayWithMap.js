@@ -11,7 +11,7 @@ console.log("First Name:", mp.get("fname")); // Kiran
 mp.set("lname", "Poojari");
 mp.set("age", 30);
 console.log("Age:", mp.get("age")); // 30
-mp.set("age", 27);
+console.log("set() returns  :", mp.set("age", 27));
 console.log("Age:", mp.get("age")); // 27
 
 // Keeps the insertion order
@@ -54,7 +54,7 @@ console.log(`has key fname :`, mp.has("fname")); // true
 console.log(`has key name  :`, mp.has("name")); // false
 
 console.log("\n------- .delete(key) ---------");
-mp.delete("fname");
+console.log(`mp.delete("fname")   :  ${mp.delete("fname")}`);
 console.log(`.has("fname")              :`, mp.has("fname")); // false
 console.log(`map after .delete("fname") : `, mp);
 
