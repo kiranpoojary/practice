@@ -93,12 +93,72 @@ const nestedArray = [
 // console.log(nestedArray.myFlat(Infinity));
 //
 // once
+// function once(fn) {
+//   let called = false;
+//   let result;
+//   return function () {
+//     if (!called) {
+//       result = fn(...arguments);
+//       called = true;
+//       return result;
+//     } else {
+//       return result;
+//     }
+//   };
+// }
+
+// function greet(name) {
+//   return `Hi ${name}`;
+// }
+
+// const greetOnce = once(greet);
+
+// console.log(greetOnce("Ekta"));
+// console.log(greetOnce("Kiran"));
+// console.log(greetOnce("Nitya"));
 //
 //
 //
 //
 // memoization
 //
+
+async function processing(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+function memoize(fn) {
+  let cache = {};
+  return async function () {
+    const key = JSON.stringify(arguments);
+    if (cache[key]) {
+      return cache[key];
+    } else {
+      const result = await fn(...arguments);
+      cache[key] = result;
+      return cache[key];
+    }
+  };
+}
+
+async function getUserData(uid) {
+  console.log(`processing: ${uid}.........`);
+  await processing(2000);
+  return { uid };
+}
+const memoGetuserData = memoize(getUserData);
+
+async function global() {
+  console.log(await memoGetuserData(123));
+  console.log(await memoGetuserData(123));
+  console.log(await memoGetuserData(123));
+  console.log(await memoGetuserData(124));
+  console.log(await memoGetuserData(124));
+  console.log(await memoGetuserData(124));
+}
+
+global();
+
 //
 //
 //
