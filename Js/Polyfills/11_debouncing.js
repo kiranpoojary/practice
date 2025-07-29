@@ -5,30 +5,39 @@
 console.log(
   "\n************************************** Debouncing *****************************************"
 );
-function myDebounce(cb, delay) {
+function debouncer(fn, delay) {
   let timer;
-  return function (...args) {
+  return function () {
     if (timer) clearTimeout(timer);
     timer = setTimeout(() => {
-      cb(...args);
+      clearTimeout(timer);
+      return fn(...arguments);
     }, delay);
   };
 }
 
-function wish(i) {
-  console.log(`Good Morning ${i}`);
+function searchProduct(searchTxt) {
+  console.log(`searching for: ${searchTxt}`);
 }
 
-console.log(
-  "------------------------ Without Debouncing ---------------------"
-);
-
-for (let i = 0; i < 10; i++) {
-  wish(i);
+const debouncedSearchProduct = debouncer(searchProduct, 300);
+async function wait(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-console.log("------------------------ With Debouncing ---------------------");
-const wish2 = myDebounce(wish, 300);
-for (let i = 0; i < 10; i++) {
-  wish2(i);
+const str = "SAMSUNG GALEXY NOTE 5 PRO";
+
+console.log("----------- Search Without Debouncing---------------");
+for (let i = 0; i < str.length; i++) {
+  if (str[i] == " ") {
+    await wait(300);
+  } else searchProduct(str.slice(0, i + 1));
+}
+
+console.log("------------ Search With Debouncing-----------------");
+
+for (let i = 0; i < str.length; i++) {
+  if (str[i] == " ") {
+    await wait(300);
+  } else debouncedSearchProduct(str.slice(0, i + 1));
 }

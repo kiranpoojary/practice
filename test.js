@@ -123,47 +123,74 @@ const nestedArray = [
 // memoization
 //
 
-async function processing(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
+// async function processing(ms) {
+//   return new Promise((resolve) => setTimeout(resolve, ms));
+// }
 
-function memoize(fn) {
-  let cache = {};
-  return async function () {
-    const key = JSON.stringify(arguments);
-    if (cache[key]) {
-      return cache[key];
-    } else {
-      const result = await fn(...arguments);
-      cache[key] = result;
-      return cache[key];
-    }
-  };
-}
+// function memoize(fn) {
+//   let cache = {};
+//   return async function () {
+//     const key = JSON.stringify(arguments);
+//     if (cache[key]) {
+//       return cache[key];
+//     } else {
+//       const result = await fn(...arguments);
+//       cache[key] = result;
+//       return cache[key];
+//     }
+//   };
+// }
 
-async function getUserData(uid) {
-  console.log(`processing: ${uid}.........`);
-  await processing(2000);
-  return { uid };
-}
-const memoGetuserData = memoize(getUserData);
+// async function getUserData(uid) {
+//   console.log(`processing: ${uid}.........`);
+//   await processing(2000);
+//   return { uid };
+// }
+// const memoGetuserData = memoize(getUserData);
 
-async function global() {
-  console.log(await memoGetuserData(123));
-  console.log(await memoGetuserData(123));
-  console.log(await memoGetuserData(123));
-  console.log(await memoGetuserData(124));
-  console.log(await memoGetuserData(124));
-  console.log(await memoGetuserData(124));
-}
+// async function global() {
+//   console.log(await memoGetuserData(123));
+//   console.log(await memoGetuserData(123));
+//   console.log(await memoGetuserData(123));
+//   console.log(await memoGetuserData(124));
+//   console.log(await memoGetuserData(124));
+//   console.log(await memoGetuserData(124));
+// }
 
-global();
+// global();
 
 //
 //
 //
 // debouncing
-//
+// Ekta Dewangane
+function debouncer(fn, delay) {
+  let timer;
+  return function () {
+    if (timer) clearTimeout(timer);
+    timer = setTimeout(() => {
+      clearTimeout(timer);
+      return fn(...arguments);
+    }, delay);
+  };
+}
+
+function searchProduct(searchTxt) {
+  console.log(`searching for: ${searchTxt}`);
+}
+
+const debouncedSearchProduct = debouncer(searchProduct, 300);
+async function wait(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+const str = "SAMSUNG GALEXY NOTE 5 PRO";
+
+for (let i = 0; i < str.length; i++) {
+  if (str[i] == " ") {
+    await wait(300);
+  } else debouncedSearchProduct(str.slice(0, i + 1));
+}
 //
 //
 //
