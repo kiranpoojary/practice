@@ -164,14 +164,71 @@ const nestedArray = [
 //
 // debouncing
 // Ekta Dewangane
-function debouncer(fn, delay) {
-  let timer;
+// console.log(
+//   "\n************************************** Debouncing *****************************************"
+// );
+// function debouncer(fn, delay) {
+//   let timer;
+//   return function () {
+//     if (timer) clearTimeout(timer);
+//     timer = setTimeout(() => {
+//       clearTimeout(timer);
+//       return fn(...arguments);
+//     }, delay);
+//   };
+// }
+
+// function searchProduct(searchTxt) {
+//   console.log(`searching for: ${searchTxt}`);
+// }
+
+// const debouncedSearchProduct = debouncer(searchProduct, 300);
+// async function wait(ms) {
+//   return new Promise((resolve) => setTimeout(resolve, ms));
+// }
+
+// const str = "SAMSUNG GALEXY NOTE 5 PRO";
+
+// console.log("----------- Search Without Debouncing---------------");
+// for (let i = 0; i < str.length; i++) {
+//   if (str[i] == " ") {
+//     await wait(300);
+//   } else searchProduct(str.slice(0, i + 1));
+// }
+
+// console.log("------------ Search With Debouncing-----------------");
+
+// for (let i = 0; i < str.length; i++) {
+//   if (str[i] == " ") {
+//     await wait(300);
+//   } else debouncedSearchProduct(str.slice(0, i + 1));
+// }
+
+//
+//
+//
+// throttling
+console.log(
+  "\n************************************** Debouncing *****************************************"
+);
+function throttler(fn, delay) {
+  let lastExecuted = 0;
+  let timeoutId;
+
   return function () {
-    if (timer) clearTimeout(timer);
-    timer = setTimeout(() => {
-      clearTimeout(timer);
-      return fn(...arguments);
-    }, delay);
+    const now = Date.now();
+    const remaining = delay - (now - lastExecuted);
+    if (remaining <= 0) {
+      clearTimeout(timeoutId);
+      lastExecuted = now;
+      fn(...arguments);
+    } else {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        lastExecuted = Date.now();
+        fn(...arguments);
+      }, remaining);
+    }
   };
 }
 
@@ -179,23 +236,28 @@ function searchProduct(searchTxt) {
   console.log(`searching for: ${searchTxt}`);
 }
 
-const debouncedSearchProduct = debouncer(searchProduct, 300);
+const throttledProductSearch = throttler(searchProduct, 300);
 async function wait(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 const str = "SAMSUNG GALEXY NOTE 5 PRO";
 
+console.log("----------- Search Without Debouncing---------------");
 for (let i = 0; i < str.length; i++) {
   if (str[i] == " ") {
     await wait(300);
-  } else debouncedSearchProduct(str.slice(0, i + 1));
+  } else searchProduct(str.slice(0, i + 1));
 }
-//
-//
-//
-// throttling
-//
+
+console.log("------------ Search With Debouncing-----------------");
+
+for (let i = 0; i < str.length; i++) {
+  if (str[i] == " ") {
+    await wait(200);
+  } else throttledProductSearch(str.slice(0, i + 1));
+}
+
 //
 //
 //

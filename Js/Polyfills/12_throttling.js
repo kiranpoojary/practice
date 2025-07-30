@@ -4,34 +4,51 @@
 //usecase:
 
 console.log(
-  "\n************************************** Throttling *****************************************"
+  "\n************************************** Debouncing *****************************************"
 );
-function myThrottle(cb, delay) {
-  let lastCalledTime = 0; // 0 means 9970 its last called, so u have to call first
-  return function (...args) {
-    let nowTime = new Date().getTime();
-    if (nowTime - lastCalledTime < delay) return;
-    else {
-      lastCalledTime = nowTime; // 9970 to curr date time
-      cb(...args);
+function throttler(fn, delay) {
+  let lastExecuted = 0;
+  let timeoutId;
+
+  return function () {
+    const now = Date.now();
+    const remaining = delay - (now - lastExecuted);
+    if (remaining <= 0) {
+      clearTimeout(timeoutId);
+      lastExecuted = now;
+      fn(...arguments);
+    } else {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        lastExecuted = Date.now();
+        fn(...arguments);
+      }, remaining);
     }
   };
 }
 
-function wish(i) {
-  console.log(`Good Morning ${i}`);
+function searchProduct(searchTxt) {
+  console.log(`searching for: ${searchTxt}`);
 }
 
-console.log(
-  "------------------------ Without throttling ---------------------"
-);
-
-for (let i = 0; i < 12000; i++) {
-  wish(i);
+const throttledProductSearch = throttler(searchProduct, 300);
+async function wait(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-console.log("------------------------ With throttling ---------------------");
-const wish2 = myThrottle(wish, 2); // 2 milis of delay
-for (let i = 0; i < 12000; i++) {
-  wish2(i);
+const str = "SAMSUNG GALEXY NOTE 5 PRO";
+
+console.log("----------- Search Without Throttling---------------");
+for (let i = 0; i < str.length; i++) {
+  if (str[i] == " ") {
+    await wait(300);
+  } else searchProduct(str.slice(0, i + 1));
+}
+
+console.log("------------ Search With Throttling-----------------");
+
+for (let i = 0; i < str.length; i++) {
+  if (str[i] == " ") {
+    await wait(200);
+  } else throttledProductSearch(str.slice(0, i + 1));
 }
