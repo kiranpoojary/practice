@@ -61,95 +61,108 @@ console.log(
   "\n***********************************************************************************************"
 );
 // with CALL
-console.log("-----------call----------");
-let person = {
-  name: "Archana",
+// call-immidiate calling
+const person = {
+  name: "Ekta",
+  age: 37,
 };
 
-function wish1(greet, endConv) {
-  console.log(`${greet} ${this.name}, ${endConv}`);
+function getPersonDetails(uid) {
+  console.log("Sl. No.   :", uid);
+  console.log("Full Name :", this.name);
+  console.log("Age       :", this.age);
 }
-wish1("Good Morning", "Bye"); // without call : Good Morning undefined, undefined
-wish1.call(person, "Good Morning", "Bye"); // attach custom this context using call : Good Morning Archana, Bye
 
-console.log("\n-----------myCall----------");
+// getPersonDetails.call(person, "1");
 
-Function.prototype.myCall = function (cutomThisContext = {}, ...args) {
+Function.prototype.myCall = function (customThis = {}, ...args) {
   if (typeof this !== "function") {
-    throw new Error(this + " not a function");
+    throw new Error(`${this} is not a function`);
   }
-  cutomThisContext.fn = this;
-  cutomThisContext.fn(...args);
+  if (
+    customThis === null ||
+    typeof customThis !== "object" ||
+    Array.isArray(customThis)
+  ) {
+    customThis = {};
+  }
+  customThis.fn = this;
+  customThis.fn(...args);
 };
 
-function wish2(greet, endConv) {
-  console.log(`${greet} ${this.name}, ${endConv}`);
-}
-
-wish2("Good Morning", "Bye");
-wish2.myCall(person, "Good Morning", "Bye");
-
-console.log(
-  "\n***********************************************************************************************"
-);
-
-console.log("-----------apply----------");
-
-function wish3(greet, endConv) {
-  console.log(`${greet} ${this.name}, ${endConv}`);
-}
-wish3("Good noon", "Bye");
-wish3.apply(person, ["Good noon", "Bye"]);
-
+getPersonDetails.myCall(person, "1");
 console.log("\n-----------myApply----------");
-Function.prototype.myApply = function (cutomThisContext = {}, args = []) {
-  if (typeof this !== "function") {
-    throw new Error(this + " not a function");
-  }
-  if (!Array.isArray(args)) {
-    throw new Error(args + " not an array");
-  }
-  cutomThisContext.fn = this;
-  cutomThisContext.fn(...args);
+const person2 = {
+  name: "Ekta",
+  age: 37,
 };
 
-function wish4(greet, endConv) {
-  console.log(`${greet} ${this.name}, ${endConv}`);
+function getPersonDetails(sl, reg) {
+  console.log("Sl. No.   :", sl);
+  console.log("Reg. No.  :", reg);
+  console.log("Full Name :", this.name);
+  console.log("Age       :", this.age);
 }
 
-wish4("Good noon", "Bye");
-wish4.myApply(person, ["Good noon", "Bye"]);
+// getPersonDetails.apply(person, [1, 2]);
 
-console.log(
-  "\n***********************************************************************************************"
-);
+Function.prototype.myApply = function (customThis = {}, args = []) {
+  if (typeof this !== "function") {
+    throw new Error(`${this} is not a function`);
+  }
+  if (
+    customThis === null ||
+    typeof customThis !== "object" ||
+    Array.isArray(customThis)
+  ) {
+    customThis = {};
+  }
 
-console.log("-----------bind----------");
-function wish5(greet, endConv) {
-  console.log(`${greet} ${this.name}, ${endConv}`);
-}
+  if (!Array.isArray(args)) args = [];
+  customThis.fn = this;
+  customThis.fn(...args);
+};
 
-const wish55 = wish5.bind(person, "Good Evening");
-wish55("Bye");
+getPersonDetails.myApply(person2, [1, 2]);
 
 console.log("\n-----------myBind----------");
 
-Function.prototype.myBind = function (cutomThisContext = {}, ...args) {
+// bind - return function
+const person3 = {
+  name: "Ekta",
+  age: 37,
+};
+
+function getPersonDetails(sl, reg, wish) {
+  console.log("Sl. No.   :", sl);
+  console.log("Reg. No.  :", reg);
+  console.log("Full Name :", this.name);
+  console.log("Age       :", this.age);
+  console.log("Wish      :", wish);
+}
+
+// const bindedFn = getPersonDetails.bind(person, 101, 202);
+// bindedFn("Bye");
+Function.prototype.myBind = function (customThis = {}, ...args) {
   if (typeof this !== "function") {
-    throw new Error(this + " not a function");
+    throw new Error(`${this} is not a function`);
   }
-  cutomThisContext.fn = this;
-  return function (...newArgs) {
-    return cutomThisContext.fn(...args, ...newArgs);
+  if (
+    customThis === null ||
+    typeof customThis !== "object" ||
+    Array.isArray(customThis)
+  ) {
+    customThis = {};
+  }
+
+  customThis.fn = this;
+  return function () {
+    return customThis.fn(...args, ...arguments);
   };
 };
 
-function wish6(greet, endConv) {
-  console.log(`${greet} ${this.name}, ${endConv}`);
-}
-
-const wish66 = wish6.myBind(person, "Good Evening");
-wish66("Bye");
+const bindedFn = getPersonDetails.myBind(person3, 101, 202);
+bindedFn("Hi");
 
 console.log(
   "\n***********************************************************************************************"

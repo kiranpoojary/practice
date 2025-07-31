@@ -208,71 +208,165 @@ const nestedArray = [
 //
 //
 // throttling
-console.log(
-  "\n************************************** Debouncing *****************************************"
-);
-function throttler(fn, delay) {
-  let lastExecuted = 0;
-  let timeoutId;
+// console.log(
+//   "\n************************************** Debouncing *****************************************"
+// );
+// function throttler(fn, delay) {
+//   let lastExecuted = 0;
+//   let timeoutId;
 
+//   return function () {
+//     const now = Date.now();
+//     const remaining = delay - (now - lastExecuted);
+//     if (remaining <= 0) {
+//       clearTimeout(timeoutId);
+//       lastExecuted = now;
+//       fn(...arguments);
+//     } else {
+//       clearTimeout(timeoutId);
+//       timeoutId = setTimeout(() => {
+//         lastExecuted = Date.now();
+//         fn(...arguments);
+//       }, remaining);
+//     }
+//   };
+// }
+
+// function searchProduct(searchTxt) {
+//   console.log(`searching for: ${searchTxt}`);
+// }
+
+// const throttledProductSearch = throttler(searchProduct, 300);
+// async function wait(ms) {
+//   return new Promise((resolve) => setTimeout(resolve, ms));
+// }
+
+// const str = "SAMSUNG GALEXY NOTE 5 PRO";
+
+// console.log("----------- Search Without Debouncing---------------");
+// for (let i = 0; i < str.length; i++) {
+//   if (str[i] == " ") {
+//     await wait(300);
+//   } else searchProduct(str.slice(0, i + 1));
+// }
+
+// console.log("------------ Search With Debouncing-----------------");
+
+// for (let i = 0; i < str.length; i++) {
+//   if (str[i] == " ") {
+//     await wait(200);
+//   } else throttledProductSearch(str.slice(0, i + 1));
+// }
+
+//
+//
+//
+// call-immidiate calling
+// const person = {
+//   name: "Ekta",
+//   age: 37,
+// };
+
+// function getPersonDetails(uid) {
+//   console.log("Sl. No.   :", uid);
+//   console.log("Full Name :", this.name);
+//   console.log("Age       :", this.age);
+// }
+
+// // getPersonDetails.call(person, "1");
+
+// Function.prototype.myCall = function (customThis = {}, ...args) {
+//   if (typeof this !== "function") {
+//     throw new Error(`${this} is not a function`);
+//   }
+//   if (
+//     customThis === null ||
+//     typeof customThis !== "object" ||
+//     Array.isArray(customThis)
+//   ) {
+//     customThis = {};
+//   }
+//   customThis.fn = this;
+//   customThis.fn(...args);
+// };
+
+// getPersonDetails.myCall(person, "1");
+
+//
+//
+//
+// apply - immidiate calling
+// const person = {
+//   name: "Ekta",
+//   age: 37,
+// };
+
+// function getPersonDetails(sl, reg) {
+//   console.log("Sl. No.   :", sl);
+//   console.log("Reg. No.  :", reg);
+//   console.log("Full Name :", this.name);
+//   console.log("Age       :", this.age);
+// }
+
+// // getPersonDetails.apply(person, [1, 2]);
+
+// Function.prototype.myApply = function (customThis = {}, args = []) {
+//   if (typeof this !== "function") {
+//     throw new Error(`${this} is not a function`);
+//   }
+//   if (
+//     customThis === null ||
+//     typeof customThis !== "object" ||
+//     Array.isArray(customThis)
+//   ) {
+//     customThis = {};
+//   }
+
+//   if (!Array.isArray(args)) args = [];
+//   customThis.fn = this;
+//   customThis.fn(...args);
+// };
+
+// getPersonDetails.myApply(null, [1, 2]);
+//
+//
+//
+// bind - return function
+const person3 = {
+  name: "Ekta",
+  age: 37,
+};
+
+function getPersonDetails(sl, reg, wish) {
+  console.log("Sl. No.   :", sl);
+  console.log("Reg. No.  :", reg);
+  console.log("Full Name :", this.name);
+  console.log("Age       :", this.age);
+  console.log("Wish      :", wish);
+}
+
+// const bindedFn = getPersonDetails.bind(person, 101, 202);
+// bindedFn("Bye");
+Function.prototype.myBind = function (customThis = {}, ...args) {
+  if (typeof this !== "function") {
+    throw new Error(`${this} is not a function`);
+  }
+  if (
+    customThis === null ||
+    typeof customThis !== "object" ||
+    Array.isArray(customThis)
+  ) {
+    customThis = {};
+  }
+
+  customThis.fn = this;
   return function () {
-    const now = Date.now();
-    const remaining = delay - (now - lastExecuted);
-    if (remaining <= 0) {
-      clearTimeout(timeoutId);
-      lastExecuted = now;
-      fn(...arguments);
-    } else {
-      clearTimeout(timeoutId);
-      timeoutId = setTimeout(() => {
-        lastExecuted = Date.now();
-        fn(...arguments);
-      }, remaining);
-    }
+    return customThis.fn(...args, ...arguments);
   };
-}
+};
 
-function searchProduct(searchTxt) {
-  console.log(`searching for: ${searchTxt}`);
-}
-
-const throttledProductSearch = throttler(searchProduct, 300);
-async function wait(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
-
-const str = "SAMSUNG GALEXY NOTE 5 PRO";
-
-console.log("----------- Search Without Debouncing---------------");
-for (let i = 0; i < str.length; i++) {
-  if (str[i] == " ") {
-    await wait(300);
-  } else searchProduct(str.slice(0, i + 1));
-}
-
-console.log("------------ Search With Debouncing-----------------");
-
-for (let i = 0; i < str.length; i++) {
-  if (str[i] == " ") {
-    await wait(200);
-  } else throttledProductSearch(str.slice(0, i + 1));
-}
-
-//
-//
-//
-// call
-//
-//
-//
-//
-// apply
-//
-//
-//
-//
-// bind
-//
+const bindedFn = getPersonDetails.myBind(person3, 101, 202);
+bindedFn("Hi");
 //
 //
 //
