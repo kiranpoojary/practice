@@ -332,47 +332,164 @@ const nestedArray = [
 //
 //
 // bind - return function
-const person3 = {
-  name: "Ekta",
-  age: 37,
-};
+// const person3 = {
+//   name: "Ekta",
+//   age: 37,
+// };
 
-function getPersonDetails(sl, reg, wish) {
-  console.log("Sl. No.   :", sl);
-  console.log("Reg. No.  :", reg);
-  console.log("Full Name :", this.name);
-  console.log("Age       :", this.age);
-  console.log("Wish      :", wish);
-}
+// function getPersonDetails(sl, reg, wish) {
+//   console.log("Sl. No.   :", sl);
+//   console.log("Reg. No.  :", reg);
+//   console.log("Full Name :", this.name);
+//   console.log("Age       :", this.age);
+//   console.log("Wish      :", wish);
+// }
 
-// const bindedFn = getPersonDetails.bind(person, 101, 202);
-// bindedFn("Bye");
-Function.prototype.myBind = function (customThis = {}, ...args) {
-  if (typeof this !== "function") {
-    throw new Error(`${this} is not a function`);
-  }
-  if (
-    customThis === null ||
-    typeof customThis !== "object" ||
-    Array.isArray(customThis)
-  ) {
-    customThis = {};
-  }
+// // const bindedFn = getPersonDetails.bind(person, 101, 202);
+// // bindedFn("Bye");
+// Function.prototype.myBind = function (customThis = {}, ...args) {
+//   if (typeof this !== "function") {
+//     throw new Error(`${this} is not a function`);
+//   }
+//   if (
+//     customThis === null ||
+//     typeof customThis !== "object" ||
+//     Array.isArray(customThis)
+//   ) {
+//     customThis = {};
+//   }
 
-  customThis.fn = this;
-  return function () {
-    return customThis.fn(...args, ...arguments);
-  };
-};
+//   customThis.fn = this;
+//   return function () {
+//     return customThis.fn(...args, ...arguments);
+//   };
+// };
 
-const bindedFn = getPersonDetails.myBind(person3, 101, 202);
-bindedFn("Hi");
+// const bindedFn = getPersonDetails.myBind(person3, 101, 202);
+// bindedFn("Hi");
 //
 //
 //
 // promise
-//
-//
-//
-//
-//
+
+// const userData = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     resolve({ name: "Ekta", age: 37 });
+//     // reject(new Error("500"));
+//   }, 2000);
+// });
+// userData
+//   .then((data) => console.log({ data }))
+//   .catch((e) => console.log(e))
+//   .finally(() => console.log("Finally"));
+
+// function MyPromise(cbFn) {
+//   let value;
+//   let error;
+//   let resolved = false;
+//   let rejected = false;
+//   let onResolve;
+//   let onReject;
+//   let onFinally;
+//   let called = false;
+
+//   //async
+//   function resolve(val) {
+//     resolved = true;
+//     value = val;
+//     if (typeof onResolve == "function" && !called) {
+//       called = true;
+//       onResolve(value);
+//       onFinally();
+//     }
+//     return this;
+//   }
+
+//   function reject(err) {
+//     rejected = true;
+//     error = err;
+//     if (typeof onReject == "function" && !called) {
+//       called = true;
+//       onReject(error);
+//       onFinally();
+//     }
+//     return this;
+//   }
+
+//   //sync
+//   this.then = function (thenFn) {
+//     onResolve = thenFn;
+//     if (resolved && !called) {
+//       called = true;
+//       onResolve(value);
+//     }
+//     return this;
+//   };
+
+//   this.catch = function (catchFn) {
+//     onReject = catchFn;
+//     if (rejected && !called) {
+//       called = true;
+//       onReject(error);
+//     }
+//     return this;
+//   };
+
+//   this.finally = function (finallyFn) {
+//     onFinally = finallyFn;
+//     if (called) {
+//       finallyFn();
+//     }
+//     return this;
+//   };
+
+//   cbFn(resolve, reject);
+
+//   return this;
+// }
+
+// const userData = new MyPromise((resolve, reject) => {
+//   // setTimeout(() => {
+//   resolve({ name: "Ekta", age: 37 });
+//   // reject(new Error("500"));
+//   // }, 1000);
+// });
+
+// userData
+//   .then((data) => {
+//     console.log({ data });
+//   })
+//   .catch((e) => console.log(e))
+//   .finally(() => console.log("Finally"));
+
+function counter(maxCount = 1, currCount = 0) {
+  let result = currCount;
+  if (currCount < maxCount) {
+    const newCount = counter(maxCount, ++currCount);
+    result = result < newCount ? newCount : result;
+  }
+  return result;
+}
+
+console.log(counter(5));
+
+function getCount(initCount = 0) {
+  let count = initCount;
+
+  return () => {
+    return ++count;
+  };
+}
+
+const nextCount = getCount();
+console.log(nextCount());
+console.log(nextCount());
+console.log(nextCount());
+console.log(nextCount());
+console.log(nextCount());
+console.log(nextCount());
+console.log(nextCount());
+console.log(nextCount());
+console.log(nextCount());
+console.log(nextCount());
+console.log(nextCount());
